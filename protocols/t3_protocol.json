@@ -1,0 +1,937 @@
+{
+ "protocol_id": "t3_jenga_push_through_v1",
+ "task": "Push the middle block of layer {k} out of the tower with the chopstick.",
+ "task_note": "Language-conditioned: the tower and start are the same for every layer, so only the instruction says which layer. Lower layers carry more weight above them and are tighter, so the push force differs by layer. Each schedule/evaluation row carries its own task string (meta.json task, LeRobot frame task).",
+ "fps": 30,
+ "object": "Pine large Jenga-style blocks, 15 x 5 x 3 cm, ~100 g each. Tower: 7 layers x 3 blocks (21 blocks), 15 x 15 cm footprint, 3 cm per layer, layers alternate direction. Pusher: a wooden chopstick or skewer (~6-7 mm, >= 23 cm) standing upright in a paper cup at a fixed taped spot in front of the tower; the W2L gripper is too wide to push a block deep without touching its neighbours (2026-10-19 pilots), the chopstick fits the 5 x 3 cm slot.",
+ "tower": {
+  "layers": 7,
+  "layer_numbering": "1 = bottom layer on the mat",
+  "target_layers": [
+   2,
+   4,
+   6
+  ],
+  "target_block": "the middle of the three blocks of the commanded layer",
+  "even_layers_long_axis": "mat x (left-right as seen from the robot, perpendicular to the reach direction); odd layers along mat y",
+  "placement": "On the robot's left of the zero-pose gripper: near face about level with the zero-pose fingertips, ~4 cm lateral clearance to the fingers; the tower covers the red/yellow (-x) half of the mat. The tape marks at the four footprint corners are the reference (set 2026-10-19 after the pilot reach check); photos: t3_pilot_20261019 ep000 iPhone/iPad/Action 4 videos.",
+  "placement_tolerance": {
+   "xy_cm": 1.0,
+   "yaw_deg": 5
+  },
+  "push_side": "outer end (robot's left, mat -x, away from the mat centre): the chopstick tip pushes the target block all the way through toward the mat centre (~15 cm) until it tips out of the inner side",
+  "exit_side": "inner end (toward the mat centre, mat +x): the block falls out onto the mat; the gripper never enters the tower",
+  "target_heights_cm": {
+   "2": [
+    3,
+    6
+   ],
+   "4": [
+    9,
+    12
+   ],
+   "6": [
+    15,
+    18
+   ]
+  },
+  "reach_note": "Pilot 2026-10-19 (t3_pilot_20261019 ep000): with the leader the operator reached the outer end face and a grasp pose over the inner end of layers 2, 4 and 6 without touching the tower; posture natural. If the tower is moved, repeat this check."
+ },
+ "start_home_q": {
+  "1": 0.0,
+  "4": 0.0,
+  "5": 0.0,
+  "6": 0.0
+ },
+ "start_home_note": "Every collection and evaluation run first moves J1/J4/J5/J6 from the disabled rest to these software-reference positions (mirror --start-home, same CSP move as the end-of-run return, 0.01 rad tolerance), so the start does not drift from run to run (docs/validation/IL_T2_J4_START_AND_A_ROW_2026-10-19.md). J2/J3 stay on the rest support; J7 keeps its start rule.",
+ "landing_zone": "the block lands on the mat on the inner (+x) side, fully out of the tower; orientation free",
+ "episode_duration_s": 90,
+ "episode_structure": [
+  "start: arm at supported zero pose, gripper near-closed, leader neutral; J1/J4/J5/J6 are moved to start_home_q before following",
+  "FIRST ~1 s: the same lift to the fixed look pose as T1/T2",
+  "open, take the chopstick out of the cup near its upper end (~17 cm or more sticking out beyond the fingertips)",
+  "put the chopstick tip on the outer end face of the commanded layer's middle block and push it along the block axis toward the mat centre until it tips out of the inner side (~15 cm; slowly; stop if the tower rocks)",
+  "pull the chopstick back out of the slot along the same line, drop it on the table at the drop spot (outside the mat, away from the tower)",
+  "lift clear, leader to neutral, hold still until the run ends"
+ ],
+ "setup_prompt": "Arm at supported zero pose, gripper empty and near-closed, leader neutral (behind the follower), tower complete (7 layers, faces flush) inside its tape marks, chopstick upright in its cup.",
+ "demo_prompt": "Demo (90 s): lift to the look pose (~1 s), take the chopstick from the cup (hold near its upper end), push the commanded middle block all the way through until it falls out on the inner side, withdraw the chopstick, drop it at the drop spot, leader to neutral.",
+ "reset": {
+  "between_runs": "Put the removed block back into its own slot (middle of the same layer), push all four faces flush with a straightedge, and stand the chopstick back in its cup. Internal contact forces still change from run to run; this is accepted as natural tightness variation.",
+  "rebuild": "Rows with rebuild_before = true: take the tower down and rebuild it, faces flush, inside the tape marks: the three pencil-marked loose blocks always go in the middle of layers 2, 4 and 6 (any of the three in any of those layers), the other 18 blocks in random order. Then check by hand that the three middle blocks move under a light push. Why: in a 3-block layer either the middle block is load-bearing (slightly taller) or the side blocks are, and only a push tells which; the 2026-10-19 hand check of a random build found the layer 4 and 6 middle blocks load-bearing. A vision-only v1 policy cannot see this, so v1 only commands blocks that can be removed; random builds where the policy must probe and switch blocks are left to the tactile follow-up.",
+  "tightness_label": "Not measured separately: the PX6D push force (px6d.jsonl) and the W2L contact force are the per-run tightness record."
+ },
+ "accept_rules": [
+  "commanded block (correct layer, middle) pushed fully out of the tower and lying on the mat",
+  "tower still standing at the end; no other block knocked out or moved more than ~1 cm (judge from the iPhone/iPad video)",
+  "no collision with the table/camera mount; no more than one re-push; the chopstick never moved another block more than ~1 cm",
+  "no sensor fault, mirror outcome completed"
+ ],
+ "sensors": {
+  "w2l": "Start the W2L viewer with --episode-session <recorder session> --tactile-image-fps 30: both fingers' raw 640x480 images at the sensor rate (~30 fps) per trial, each index row carrying the same-frame six-axis force (baseline-corrected and SDK hardware value), host CLOCK_MONOTONIC timestamps.",
+  "px6d": "sensor_recorder.py px6d.jsonl, ~50 Hz raw channels, same clock.",
+  "policy_inputs_v1": "pi0.5 v1 uses scene (D435i) + wrist (D405) images and joint state only; tactile and force are recorded for later work and are not policy inputs."
+ },
+ "collection": {
+  "target_accepted": 60,
+  "per_layer": 20,
+  "batches": [
+   {
+    "batch": 1,
+    "episodes": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   {
+    "batch": 2,
+    "episodes": [
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23
+    ]
+   },
+   {
+    "batch": 3,
+    "episodes": [
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35
+    ]
+   },
+   {
+    "batch": 4,
+    "episodes": [
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47
+    ]
+   },
+   {
+    "batch": 5,
+    "episodes": [
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59
+    ]
+   }
+  ],
+  "design": "each batch = 12 episodes = every target layer 4 times, shuffled with no layer twice in a row; the tower is rebuilt from shuffled blocks at the start of each batch.",
+  "pilot_note": "Before episode 0: leader reach check (tower.reach_note), and 2-3 unrecorded practice push-throughs per layer."
+ },
+ "schedule": [
+  {
+   "episode": 0,
+   "batch": 1,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": true,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 1,
+   "batch": 1,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 2,
+   "batch": 1,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 3,
+   "batch": 1,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 4,
+   "batch": 1,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 5,
+   "batch": 1,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 6,
+   "batch": 1,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 7,
+   "batch": 1,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 8,
+   "batch": 1,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 9,
+   "batch": 1,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 10,
+   "batch": 1,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 11,
+   "batch": 1,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 12,
+   "batch": 2,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": true,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 13,
+   "batch": 2,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 14,
+   "batch": 2,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 15,
+   "batch": 2,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 16,
+   "batch": 2,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 17,
+   "batch": 2,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 18,
+   "batch": 2,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 19,
+   "batch": 2,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 20,
+   "batch": 2,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 21,
+   "batch": 2,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 22,
+   "batch": 2,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 23,
+   "batch": 2,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 24,
+   "batch": 3,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": true,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 25,
+   "batch": 3,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 26,
+   "batch": 3,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 27,
+   "batch": 3,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 28,
+   "batch": 3,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 29,
+   "batch": 3,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 30,
+   "batch": 3,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 31,
+   "batch": 3,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 32,
+   "batch": 3,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 33,
+   "batch": 3,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 34,
+   "batch": 3,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 35,
+   "batch": 3,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 36,
+   "batch": 4,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": true,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 37,
+   "batch": 4,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 38,
+   "batch": 4,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 39,
+   "batch": 4,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 40,
+   "batch": 4,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 41,
+   "batch": 4,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 42,
+   "batch": 4,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 43,
+   "batch": 4,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 44,
+   "batch": 4,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 45,
+   "batch": 4,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 46,
+   "batch": 4,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 47,
+   "batch": 4,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 48,
+   "batch": 5,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": true,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 49,
+   "batch": 5,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 50,
+   "batch": 5,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 51,
+   "batch": 5,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 52,
+   "batch": 5,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 53,
+   "batch": 5,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 54,
+   "batch": 5,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 55,
+   "batch": 5,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 56,
+   "batch": 5,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  },
+  {
+   "episode": 57,
+   "batch": 5,
+   "layer": 6,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+  },
+  {
+   "episode": 58,
+   "batch": 5,
+   "layer": 4,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+  },
+  {
+   "episode": 59,
+   "batch": 5,
+   "layer": 2,
+   "cell": "tower",
+   "yaw_deg": 0,
+   "rebuild_before": false,
+   "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+  }
+ ],
+ "evaluation": {
+  "trials_per_policy": 21,
+  "trials": [
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 6,
+    "split": "in_distribution",
+    "rebuild_before": true,
+    "task": "Push the middle block of layer 6 out of the tower with the chopstick.",
+    "note": "开始前整塔重搭（块随机打乱），用直尺推平四面"
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 2,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 4,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 2,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 6,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 4,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 2,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 6,
+    "split": "in_distribution",
+    "rebuild_before": true,
+    "task": "Push the middle block of layer 6 out of the tower with the chopstick.",
+    "note": "开始前整塔重搭（块随机打乱），用直尺推平四面"
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 4,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 2,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 4,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 6,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 2,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 6,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 4,
+    "split": "in_distribution",
+    "rebuild_before": true,
+    "task": "Push the middle block of layer 4 out of the tower with the chopstick.",
+    "note": "开始前整塔重搭（块随机打乱），用直尺推平四面"
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 6,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 2,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 4,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 2,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 2 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 4,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 4 out of the tower with the chopstick."
+   },
+   {
+    "pos": "tower",
+    "yaw_deg": 0,
+    "layer": 6,
+    "split": "in_distribution",
+    "rebuild_before": false,
+    "task": "Push the middle block of layer 6 out of the tower with the chopstick."
+   }
+  ],
+  "design": "7 trials per target layer, no layer twice in a row; tower rebuilt from shuffled blocks before trials 0, 7 and 14 (each block of 7 has every layer at least twice). 21 rather than 20 trials so the three layers are balanced.",
+  "policies": "pi0.5 trained on T3 data only (scene + wrist cameras); sync vs rtc chosen from docs/validation/IL_T2_EVAL_PI05_RTC_2026-10-19.md",
+  "success": "commanded block pushed fully out onto the mat, tower standing, no other block displaced > ~1 cm (operator judgement from video)",
+  "stage_note": "Also note the furthest stage reached: chopstick in hand, block pushed >= 5 cm, block out, chopstick withdrawn and dropped."
+ },
+ "outcome_categories": [
+  [
+   "success",
+   "commanded block pushed fully out onto the mat, tower standing"
+  ],
+  [
+   "wrong_block",
+   "pushed or removed a block of another layer or not the middle block (note which)"
+  ],
+  [
+   "tool_miss",
+   "never got the chopstick in hand, or dropped it before the push"
+  ],
+  [
+   "push_miss",
+   "never pushed the commanded block (missed it / pushed air)"
+  ],
+  [
+   "push_stall",
+   "pushed the commanded block but not fully out before giving up / time out (note how far)"
+  ],
+  [
+   "topple",
+   "tower fell, or another block was knocked out or moved > ~1 cm"
+  ],
+  [
+   "tool_stuck",
+   "chopstick jammed in the slot or pulled the block back"
+  ],
+  [
+   "collision",
+   "hit table / fixture (operator stop)"
+  ],
+  [
+   "stall",
+   "no task progress before the end (hesitation / freeze)"
+  ],
+  [
+   "safety_stop",
+   "controller fault, hold latch or policy lost"
+  ],
+  [
+   "other",
+   "anything else; describe in the note"
+  ]
+ ],
+ "revision": "2026-10-19: first version (user-confirmed: push out, pull out and put on the table; layers 2/4/6 middle blocks; fixed tower position and direction; reinsert after each run, rebuild per batch with the three marked loose blocks fixed in the middle of layers 2/4/6 and a hand check; push from the outer end, grasp at the inner end; placement from the pilot reach check). Same day, after three pilots: the gripper alone pushed too little before hitting neighbours, so the push uses a chopstick (picked from a cup, dropped after the push), push depth 8-9 cm, horizontal grasp of the protrusion, 90 s episodes (episode.py/evaluate.py and the supervised mirror duration cap raised to 120 s). Then (protocol_id t3_jenga_push_through_v1): joint-space teleop could not pull straight (wrist mapping caps, leader/follower kinematics differ) and moved neighbours, so v1 pushes the block all the way through with the chopstick and drops nothing but the chopstick; grasp-and-pull with a straight-line scripted expert is left to the tactile follow-up."
+}

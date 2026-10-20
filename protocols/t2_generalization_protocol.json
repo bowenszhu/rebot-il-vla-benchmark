@@ -1,0 +1,617 @@
+{
+ "protocol_id": "t2_colour_square_generalization_v1",
+ "base_protocol": "t2_protocol.json",
+ "base_checkpoint": "pi05_rebot_t2_v1/checkpoints/020000 (trained on t2_protocol.json schedule only)",
+ "task": "Put the blue cube on the {colour} square.",
+ "fps": 30,
+ "object": "blue G-Research foam die (~6 cm edge), same object as T1 (t1_protocol.json)",
+ "targets": {
+  "description": "The four ~5x5 cm colour squares printed on the mat (mat coordinates, cm, from layout/t1_layout_3d.html; +-0.5 cm photo estimates).",
+  "squares_cm": {
+   "red": {
+    "x": [
+     5.4,
+     10.3
+    ],
+    "y": [
+     14.9,
+     19.9
+    ],
+    "centre": [
+     7.85,
+     17.4
+    ]
+   },
+   "green": {
+    "x": [
+     31.2,
+     36.2
+    ],
+    "y": [
+     14.9,
+     19.9
+    ],
+    "centre": [
+     33.7,
+     17.4
+    ]
+   },
+   "yellow": {
+    "x": [
+     5.4,
+     10.3
+    ],
+    "y": [
+     22.0,
+     27.0
+    ],
+    "centre": [
+     7.85,
+     24.5
+    ]
+   },
+   "purple": {
+    "x": [
+     31.2,
+     36.2
+    ],
+    "y": [
+     22.0,
+     27.0
+    ],
+    "centre": [
+     33.7,
+     24.5
+    ]
+   }
+  },
+  "reach_estimate_cm": {
+   "method": "affine fit of the 2026-10-15 pilot reach check (A1/A3/C1 dwell poses in the base frame; C3 residual 1.8 cm); horizontal distance from the base yaw axis, +-2 cm",
+   "red": 46.4,
+   "green": 40.9,
+   "yellow": 51.6,
+   "purple": 47.6,
+   "farthest_T1_start_C1": 48.4,
+   "warning": "yellow is at the nominal reach limit for a vertical gripper (~50-52 cm with the 24 cm tool). Check it in the pilot reach check; placing may use a tilted wrist and a release a few cm above the mat. If it cannot be reached, drop yellow and record 20 each of red/green/purple instead of moving the mat."
+  }
+ },
+ "episode_duration_s": 55,
+ "outcome_categories": [
+  [
+   "success",
+   "cube released with its centre inside the commanded square"
+  ],
+  [
+   "wrong_square",
+   "cube released on a DIFFERENT colour square (note which colour)"
+  ],
+  [
+   "place_miss",
+   "released, centre outside every square"
+  ],
+  [
+   "grasp_miss",
+   "never held the cube (missed / pushed it)"
+  ],
+  [
+   "drop",
+   "grasped, dropped before reaching any square"
+  ],
+  [
+   "collision",
+   "hit table / fixture (operator stop)"
+  ],
+  [
+   "stall",
+   "no task progress before the end (hesitation / freeze)"
+  ],
+  [
+   "safety_stop",
+   "controller fault, hold latch or policy lost"
+  ],
+  [
+   "other",
+   "anything else; describe in the note"
+  ]
+ ],
+ "scene": "Same table, mat placement (mat_offset_cm 12.3), cameras and lighting as T1; do NOT move the mat, so the pending T1 Diffusion evaluation still runs in the T1 scene. The T1 white box stays where it is and is not used. Generalization runs: everything as T2 unless the trial row says otherwise.",
+ "starts": {
+  "description": "Training starts from t2_protocol.json plus the unseen midpoints A12/A23/C12/C23 (4 cm from the nearest training start; >= 3.5 cm from every square at yaw 0).",
+  "xy_cm": {
+   "B2": [
+    20.8,
+    17.4
+   ],
+   "A2": [
+    20.8,
+    12.0
+   ],
+   "C2": [
+    20.8,
+    22.9
+   ],
+   "B12": [
+    16.85,
+    17.4
+   ],
+   "B23": [
+    24.75,
+    17.4
+   ],
+   "A12": [
+    16.85,
+    12.0
+   ],
+   "A23": [
+    24.75,
+    12.0
+   ],
+   "C12": [
+    16.85,
+    22.9
+   ],
+   "C23": [
+    24.75,
+    22.9
+   ]
+  },
+  "placement_tolerance_cm": 1.0
+ },
+ "distractors": {
+  "objects": "two medium rubber ducks (one yellow, one green), similar size",
+  "arrangements": {
+   "A": "yellow duck centred at mat (8, 6) cm, green duck at (34, 6) cm",
+   "B": "green duck centred at mat (8, 6) cm, yellow duck at (34, 6) cm (A swapped)"
+  },
+  "note": "candidate positions near the arm-side mat edge, off the cube-to-square paths; confirm clearance and camera view in the pre-check, photograph each arrangement, then keep them fixed"
+ },
+ "evaluation": {
+  "trials_per_policy": 42,
+  "primary_trials": 36,
+  "design": "Primary 36 = 4 blocks x 9 (3 controls + 2 spatial + 2 language + 2 clutter per block), one change per dimension against the B2/A2/C2 yaw-0 canonical setup; every colour appears 3x in controls and 2x in each challenge dimension; order shuffled within a block (seed 20261019) with no colour twice in a row. Block 5 (6 trials) is exploratory and reported separately: 2 Chinese instructions, 4 blue duck. Policy: pi0.5 only, sync chunk mode (same as the 20/20 fixed-layout run). Keep every failure; mark a trial invalid only for a setup error, and say why.",
+  "trials": [
+   {
+    "dimension": "clutter",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square.",
+    "note": "distractors arrangement A: yellow duck centred at mat (8, 6) cm, green duck at (34, 6) cm; remove after the trial",
+    "block": 1
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "C2",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square.",
+    "block": 1
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "A2",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Put the blue cube on the red square.",
+    "block": 1
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "Put the blue cube on the green square.",
+    "block": 1
+   },
+   {
+    "dimension": "spatial",
+    "split": "out_of_distribution",
+    "pos": "C23",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square.",
+    "xy_cm": [
+     24.75,
+     22.9
+    ],
+    "note": "unseen start (midpoint between training starts), yaw 0; measure with a ruler",
+    "block": 1
+   },
+   {
+    "dimension": "language",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Place the blue cube on the yellow square.",
+    "note": "paraphrase template 1",
+    "block": 1
+   },
+   {
+    "dimension": "clutter",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Put the blue cube on the red square.",
+    "note": "distractors arrangement A: yellow duck centred at mat (8, 6) cm, green duck at (34, 6) cm; remove after the trial",
+    "block": 1
+   },
+   {
+    "dimension": "language",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "On the purple square, put the blue cube.",
+    "note": "paraphrase template 2",
+    "block": 1
+   },
+   {
+    "dimension": "spatial",
+    "split": "out_of_distribution",
+    "pos": "A12",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Put the blue cube on the red square.",
+    "xy_cm": [
+     16.85,
+     12.0
+    ],
+    "note": "unseen start (midpoint between training starts), yaw 0; measure with a ruler",
+    "block": 1
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square.",
+    "block": 2
+   },
+   {
+    "dimension": "spatial",
+    "split": "out_of_distribution",
+    "pos": "A23",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "Put the blue cube on the green square.",
+    "xy_cm": [
+     24.75,
+     12.0
+    ],
+    "note": "unseen start (midpoint between training starts), yaw 0; measure with a ruler",
+    "block": 2
+   },
+   {
+    "dimension": "clutter",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square.",
+    "note": "distractors arrangement B: green duck centred at mat (8, 6) cm, yellow duck at (34, 6) cm (A swapped); remove after the trial",
+    "block": 2
+   },
+   {
+    "dimension": "language",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Place the blue cube on the red square.",
+    "note": "paraphrase template 1",
+    "block": 2
+   },
+   {
+    "dimension": "language",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "On the green square, put the blue cube.",
+    "note": "paraphrase template 2",
+    "block": 2
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "C2",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square.",
+    "block": 2
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "A2",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "Put the blue cube on the green square.",
+    "block": 2
+   },
+   {
+    "dimension": "spatial",
+    "split": "out_of_distribution",
+    "pos": "C12",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square.",
+    "xy_cm": [
+     16.85,
+     22.9
+    ],
+    "note": "unseen start (midpoint between training starts), yaw 0; measure with a ruler",
+    "block": 2
+   },
+   {
+    "dimension": "clutter",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "Put the blue cube on the green square.",
+    "note": "distractors arrangement B: green duck centred at mat (8, 6) cm, yellow duck at (34, 6) cm (A swapped); remove after the trial",
+    "block": 2
+   },
+   {
+    "dimension": "clutter",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square.",
+    "note": "distractors arrangement A: yellow duck centred at mat (8, 6) cm, green duck at (34, 6) cm; remove after the trial",
+    "block": 3
+   },
+   {
+    "dimension": "clutter",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "Put the blue cube on the green square.",
+    "note": "distractors arrangement A: yellow duck centred at mat (8, 6) cm, green duck at (34, 6) cm; remove after the trial",
+    "block": 3
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square.",
+    "block": 3
+   },
+   {
+    "dimension": "language",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "On the yellow square, put the blue cube.",
+    "note": "paraphrase template 2",
+    "block": 3
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "C2",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Put the blue cube on the red square.",
+    "block": 3
+   },
+   {
+    "dimension": "language",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "Place the blue cube on the purple square.",
+    "note": "paraphrase template 1",
+    "block": 3
+   },
+   {
+    "dimension": "spatial",
+    "split": "out_of_distribution",
+    "pos": "C23",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Put the blue cube on the red square.",
+    "xy_cm": [
+     24.75,
+     22.9
+    ],
+    "note": "unseen start (midpoint between training starts), yaw 0; measure with a ruler",
+    "block": 3
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "A2",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square.",
+    "block": 3
+   },
+   {
+    "dimension": "spatial",
+    "split": "out_of_distribution",
+    "pos": "A12",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square.",
+    "xy_cm": [
+     16.85,
+     12.0
+    ],
+    "note": "unseen start (midpoint between training starts), yaw 0; measure with a ruler",
+    "block": 3
+   },
+   {
+    "dimension": "spatial",
+    "split": "out_of_distribution",
+    "pos": "A23",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square.",
+    "xy_cm": [
+     24.75,
+     12.0
+    ],
+    "note": "unseen start (midpoint between training starts), yaw 0; measure with a ruler",
+    "block": 4
+   },
+   {
+    "dimension": "spatial",
+    "split": "out_of_distribution",
+    "pos": "C12",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "Put the blue cube on the green square.",
+    "xy_cm": [
+     16.85,
+     22.9
+    ],
+    "note": "unseen start (midpoint between training starts), yaw 0; measure with a ruler",
+    "block": 4
+   },
+   {
+    "dimension": "clutter",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square.",
+    "note": "distractors arrangement B: green duck centred at mat (8, 6) cm, yellow duck at (34, 6) cm (A swapped); remove after the trial",
+    "block": 4
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Put the blue cube on the red square.",
+    "block": 4
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "C2",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "Put the blue cube on the green square.",
+    "block": 4
+   },
+   {
+    "dimension": "language",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "On the red square, put the blue cube.",
+    "note": "paraphrase template 2",
+    "block": 4
+   },
+   {
+    "dimension": "control",
+    "split": "in_distribution",
+    "pos": "A2",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square.",
+    "block": 4
+   },
+   {
+    "dimension": "language",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "Place the blue cube on the green square.",
+    "note": "paraphrase template 1",
+    "block": 4
+   },
+   {
+    "dimension": "clutter",
+    "split": "out_of_distribution",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Put the blue cube on the red square.",
+    "note": "distractors arrangement B: green duck centred at mat (8, 6) cm, yellow duck at (34, 6) cm (A swapped); remove after the trial",
+    "block": 4
+   },
+   {
+    "dimension": "exploratory_chinese",
+    "split": "exploratory",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "把蓝色方块放到红色方框上。",
+    "note": "Chinese instruction (training used one English template)",
+    "block": 5
+   },
+   {
+    "dimension": "exploratory_chinese",
+    "split": "exploratory",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "把蓝色方块放到紫色方框上。",
+    "note": "Chinese instruction (training used one English template)",
+    "block": 5
+   },
+   {
+    "dimension": "exploratory_object",
+    "split": "exploratory",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "Put the blue duck on the green square.",
+    "note": "blue medium rubber duck instead of the cube, head pointing away from the arm; operator may stop if the grasp looks unsafe",
+    "block": 5
+   },
+   {
+    "dimension": "exploratory_object",
+    "split": "exploratory",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Put the blue duck on the yellow square.",
+    "note": "blue medium rubber duck instead of the cube, head pointing away from the arm; operator may stop if the grasp looks unsafe",
+    "block": 5
+   },
+   {
+    "dimension": "exploratory_object",
+    "split": "exploratory",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Put the blue duck on the red square.",
+    "note": "blue medium rubber duck instead of the cube, head pointing away from the arm; operator may stop if the grasp looks unsafe",
+    "block": 5
+   },
+   {
+    "dimension": "exploratory_object",
+    "split": "exploratory",
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "Put the blue duck on the purple square.",
+    "note": "blue medium rubber duck instead of the cube, head pointing away from the arm; operator may stop if the grasp looks unsafe",
+    "block": 5
+   }
+  ],
+  "success": "cube released with its centre inside the commanded square (operator judgement, iPhone top-down view)"
+ },
+ "revision": "2026-10-19: first version (pi0.5 generalization test; design discussed with Codex, user delegated the choice)."
+}

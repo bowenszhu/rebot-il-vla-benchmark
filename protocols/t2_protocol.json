@@ -1,0 +1,867 @@
+{
+ "protocol_id": "t2_colour_square_v1",
+ "task": "Put the blue cube on the {colour} square.",
+ "task_note": "Language-conditioned: the start positions are shared by all four colours, so only the instruction says where to go. Each schedule/evaluation row carries its own task string; episode.py writes it to meta.json and convert_episodes.py uses it as the frame task. A policy without language input (ACT) can at best pick one colour: ~25% ceiling.",
+ "fps": 30,
+ "object": "blue G-Research foam die (~6 cm edge), same object as T1 (t1_protocol.json)",
+ "scene": "Same table, mat placement (mat_offset_cm 12.3), cameras and lighting as T1; do NOT move the mat, so the pending T1 Diffusion evaluation still runs in the T1 scene. The T1 white box stays where it is and is not used.",
+ "targets": {
+  "description": "The four ~5x5 cm colour squares printed on the mat (mat coordinates, cm, from layout/t1_layout_3d.html; +-0.5 cm photo estimates).",
+  "squares_cm": {
+   "red": {
+    "x": [
+     5.4,
+     10.3
+    ],
+    "y": [
+     14.9,
+     19.9
+    ],
+    "centre": [
+     7.85,
+     17.4
+    ]
+   },
+   "green": {
+    "x": [
+     31.2,
+     36.2
+    ],
+    "y": [
+     14.9,
+     19.9
+    ],
+    "centre": [
+     33.7,
+     17.4
+    ]
+   },
+   "yellow": {
+    "x": [
+     5.4,
+     10.3
+    ],
+    "y": [
+     22.0,
+     27.0
+    ],
+    "centre": [
+     7.85,
+     24.5
+    ]
+   },
+   "purple": {
+    "x": [
+     31.2,
+     36.2
+    ],
+    "y": [
+     22.0,
+     27.0
+    ],
+    "centre": [
+     33.7,
+     24.5
+    ]
+   }
+  },
+  "reach_estimate_cm": {
+   "method": "affine fit of the 2026-10-15 pilot reach check (A1/A3/C1 dwell poses in the base frame; C3 residual 1.8 cm); horizontal distance from the base yaw axis, +-2 cm",
+   "red": 46.4,
+   "green": 40.9,
+   "yellow": 51.6,
+   "purple": 47.6,
+   "farthest_T1_start_C1": 48.4,
+   "warning": "yellow is at the nominal reach limit for a vertical gripper (~50-52 cm with the 24 cm tool). Check it in the pilot reach check; placing may use a tilted wrist and a release a few cm above the mat. If it cannot be reached, drop yellow and record 20 each of red/green/purple instead of moving the mat."
+  }
+ },
+ "starts": {
+  "description": "Cube start points near the centre cross, inside the T1 black frame and >= 2 cm from every square (45 deg half-diagonal 4.24 cm). Names follow t1_protocol.json (B12 = midway B1-B2).",
+  "xy_cm": {
+   "B2": [
+    20.8,
+    17.4
+   ],
+   "A2": [
+    20.8,
+    12.0
+   ],
+   "C2": [
+    20.8,
+    22.9
+   ],
+   "B12": [
+    16.85,
+    17.4
+   ],
+   "B23": [
+    24.75,
+    17.4
+   ]
+  },
+  "placement_tolerance_cm": 1.0,
+  "yaw_deg_values": [
+   0,
+   45
+  ]
+ },
+ "episode_duration_s": 55,
+ "episode_structure": [
+  "start: arm at supported zero pose, gripper near-closed, leader at neutral (as T1)",
+  "FIRST ~1 s: the same lift to the fixed look pose as T1",
+  "reach, grasp, lift",
+  "carry to the commanded square, lower until the cube is ~1 cm above the mat, release centred on the square",
+  "lift straight up clear of the cube, then return the leader to neutral and hold still until the run ends"
+ ],
+ "setup_prompt": "Arm at supported zero pose, gripper near-closed, leader neutral, cube on its start point.",
+ "demo_prompt": "Demo: lift to the look pose (~1 s), grasp, place the cube centred on the commanded square, release, lift clear, leader to neutral.",
+ "accept_rules": [
+  "cube released with its centre inside the commanded square (the 6 cm cube then covers most of the 5 cm square), not knocked afterwards; judge from the iPhone top-down view",
+  "no collision with table/camera mount",
+  "no regrasp of more than one retry",
+  "no sensor fault, mirror outcome completed"
+ ],
+ "collection": {
+  "target_accepted": 60,
+  "per_colour": 15,
+  "batches": [
+   {
+    "batch": 1,
+    "episodes": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   {
+    "batch": 2,
+    "episodes": [
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23
+    ]
+   },
+   {
+    "batch": 3,
+    "episodes": [
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35
+    ]
+   },
+   {
+    "batch": 4,
+    "episodes": [
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47
+    ]
+   },
+   {
+    "batch": 5,
+    "episodes": [
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59
+    ]
+   }
+  ],
+  "design": "each batch = 12 episodes = every colour 3 times; over the 5 batches every (colour, start) pair occurs exactly 3 times (yaw 0, 45 and one more), so start position carries no information about the colour. Within a batch the order is shuffled with no colour twice in a row.",
+  "pilot_note": "Before episode 0, bring the fingertips over all four squares with the leader (reach check, especially yellow) and confirm the iPhone top-down view shows every square."
+ },
+ "schedule": [
+  {
+   "episode": 0,
+   "batch": 1,
+   "colour": "yellow",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 1,
+   "batch": 1,
+   "colour": "green",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 2,
+   "batch": 1,
+   "colour": "purple",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 3,
+   "batch": 1,
+   "colour": "green",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 4,
+   "batch": 1,
+   "colour": "red",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 5,
+   "batch": 1,
+   "colour": "purple",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 6,
+   "batch": 1,
+   "colour": "yellow",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 7,
+   "batch": 1,
+   "colour": "red",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 8,
+   "batch": 1,
+   "colour": "yellow",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 9,
+   "batch": 1,
+   "colour": "purple",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 10,
+   "batch": 1,
+   "colour": "red",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 11,
+   "batch": 1,
+   "colour": "green",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 12,
+   "batch": 2,
+   "colour": "green",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 13,
+   "batch": 2,
+   "colour": "purple",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 14,
+   "batch": 2,
+   "colour": "red",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 15,
+   "batch": 2,
+   "colour": "yellow",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 16,
+   "batch": 2,
+   "colour": "red",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 17,
+   "batch": 2,
+   "colour": "yellow",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 18,
+   "batch": 2,
+   "colour": "purple",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 19,
+   "batch": 2,
+   "colour": "green",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 20,
+   "batch": 2,
+   "colour": "purple",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 21,
+   "batch": 2,
+   "colour": "red",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 22,
+   "batch": 2,
+   "colour": "green",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 23,
+   "batch": 2,
+   "colour": "yellow",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 24,
+   "batch": 3,
+   "colour": "yellow",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 25,
+   "batch": 3,
+   "colour": "green",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 26,
+   "batch": 3,
+   "colour": "purple",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 27,
+   "batch": 3,
+   "colour": "yellow",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 28,
+   "batch": 3,
+   "colour": "purple",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 29,
+   "batch": 3,
+   "colour": "red",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 30,
+   "batch": 3,
+   "colour": "yellow",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 31,
+   "batch": 3,
+   "colour": "green",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 32,
+   "batch": 3,
+   "colour": "purple",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 33,
+   "batch": 3,
+   "colour": "red",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 34,
+   "batch": 3,
+   "colour": "green",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 35,
+   "batch": 3,
+   "colour": "red",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 36,
+   "batch": 4,
+   "colour": "yellow",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 37,
+   "batch": 4,
+   "colour": "purple",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 38,
+   "batch": 4,
+   "colour": "yellow",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 39,
+   "batch": 4,
+   "colour": "red",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 40,
+   "batch": 4,
+   "colour": "green",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 41,
+   "batch": 4,
+   "colour": "yellow",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 42,
+   "batch": 4,
+   "colour": "red",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 43,
+   "batch": 4,
+   "colour": "green",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 44,
+   "batch": 4,
+   "colour": "purple",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 45,
+   "batch": 4,
+   "colour": "green",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 46,
+   "batch": 4,
+   "colour": "red",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 47,
+   "batch": 4,
+   "colour": "purple",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 48,
+   "batch": 5,
+   "colour": "green",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 49,
+   "batch": 5,
+   "colour": "red",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 50,
+   "batch": 5,
+   "colour": "yellow",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 51,
+   "batch": 5,
+   "colour": "purple",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 52,
+   "batch": 5,
+   "colour": "green",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 53,
+   "batch": 5,
+   "colour": "purple",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 54,
+   "batch": 5,
+   "colour": "green",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  {
+   "episode": 55,
+   "batch": 5,
+   "colour": "red",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  {
+   "episode": 56,
+   "batch": 5,
+   "colour": "yellow",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 57,
+   "batch": 5,
+   "colour": "purple",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  {
+   "episode": 58,
+   "batch": 5,
+   "colour": "yellow",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  {
+   "episode": 59,
+   "batch": 5,
+   "colour": "red",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  }
+ ],
+ "evaluation": {
+  "trials_per_policy": 20,
+  "in_distribution": [
+   {
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Put the blue cube on the red square."
+   },
+   {
+    "pos": "A2",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "Put the blue cube on the green square."
+   },
+   {
+    "pos": "C2",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square."
+   },
+   {
+    "pos": "B12",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square."
+   },
+   {
+    "pos": "A2",
+    "yaw_deg": 45,
+    "colour": "red",
+    "task": "Put the blue cube on the red square."
+   },
+   {
+    "pos": "C2",
+    "yaw_deg": 45,
+    "colour": "green",
+    "task": "Put the blue cube on the green square."
+   },
+   {
+    "pos": "B12",
+    "yaw_deg": 45,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square."
+   },
+   {
+    "pos": "B23",
+    "yaw_deg": 45,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square."
+   },
+   {
+    "pos": "C2",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Put the blue cube on the red square."
+   },
+   {
+    "pos": "B12",
+    "yaw_deg": 0,
+    "colour": "green",
+    "task": "Put the blue cube on the green square."
+   },
+   {
+    "pos": "B23",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square."
+   },
+   {
+    "pos": "B2",
+    "yaw_deg": 45,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square."
+   },
+   {
+    "pos": "B12",
+    "yaw_deg": 45,
+    "colour": "red",
+    "task": "Put the blue cube on the red square."
+   },
+   {
+    "pos": "B23",
+    "yaw_deg": 45,
+    "colour": "green",
+    "task": "Put the blue cube on the green square."
+   },
+   {
+    "pos": "B2",
+    "yaw_deg": 0,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square."
+   },
+   {
+    "pos": "A2",
+    "yaw_deg": 0,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square."
+   },
+   {
+    "pos": "B23",
+    "yaw_deg": 0,
+    "colour": "red",
+    "task": "Put the blue cube on the red square."
+   },
+   {
+    "pos": "B2",
+    "yaw_deg": 45,
+    "colour": "green",
+    "task": "Put the blue cube on the green square."
+   },
+   {
+    "pos": "A2",
+    "yaw_deg": 45,
+    "colour": "yellow",
+    "task": "Put the blue cube on the yellow square."
+   },
+   {
+    "pos": "C2",
+    "yaw_deg": 45,
+    "colour": "purple",
+    "task": "Put the blue cube on the purple square."
+   }
+  ],
+  "in_distribution_note": "every (colour, start) pair once, 5 per colour; colour changes every trial; yaw 0/45 alternates by pair",
+  "out_of_distribution": [],
+  "policies": "ACT (no language input) and SmolVLA, both trained on T2 data only; alternate which goes first per trial as in T1",
+  "success": "cube released with its centre inside the commanded square (operator judgement, iPhone top-down view)"
+ },
+ "outcome_categories": [
+  [
+   "success",
+   "cube released with its centre inside the commanded square"
+  ],
+  [
+   "wrong_square",
+   "cube released on a DIFFERENT colour square (note which colour)"
+  ],
+  [
+   "place_miss",
+   "released, centre outside every square"
+  ],
+  [
+   "grasp_miss",
+   "never held the cube (missed / pushed it)"
+  ],
+  [
+   "drop",
+   "grasped, dropped before reaching any square"
+  ],
+  [
+   "collision",
+   "hit table / fixture (operator stop)"
+  ],
+  [
+   "stall",
+   "no task progress before the end (hesitation / freeze)"
+  ],
+  [
+   "safety_stop",
+   "controller fault, hold latch or policy lost"
+  ],
+  [
+   "other",
+   "anything else; describe in the note"
+  ]
+ ],
+ "revision": "2026-10-16: first version (user-confirmed plan: language-conditioned colour squares, ~15 demos per colour, T2-only training)."
+}
