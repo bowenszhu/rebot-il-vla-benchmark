@@ -1,0 +1,16 @@
+reBot IL/VLA benchmark
+Copyright 2026 Bowen Zhu
+
+Code (rebot_bench/, training/, analysis/, tools/, tests/) is licensed under the Apache License,
+Version 2.0 (LICENSE). It was written for this rig; it imports LeRobot (Apache-2.0, Hugging Face)
+at run time but contains no copied LeRobot, Seeed Studio or other third-party source.
+
+Protocols (protocols/), logged results (results/) and media (media/) are licensed under the
+Creative Commons Attribution 4.0 International licence (CC BY 4.0,
+https://creativecommons.org/licenses/by/4.0/).
+
+Not included and not covered by these licences: the arm's controller, motor driver, safety
+parameters and kinematic model (private rig repository), the B601-RS MuJoCo model
+(ReBot_Arm_web_RS, no licence file at the pinned commit), and the vendors' sensor SDKs.
+Product names (Seeed Studio reBot, RealSense, DM-Tac W2L, PX6D, G-Research on the foam cube)
+belong to their owners.
