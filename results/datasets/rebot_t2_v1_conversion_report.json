@@ -1,0 +1,3734 @@
+[
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep000_20261016_233959",
+  "plan": {
+   "episode": 0,
+   "batch": 1,
+   "colour": "yellow",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 919,
+  "duration_s": 30.59999999997217,
+  "trim_window_rel_s": [
+   0.0,
+   30.601039750999917
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.022800253666446224,
+    "median_age_s": 0.018980509652919864,
+    "unique_frames": 919
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.024924161333274242,
+    "median_age_s": 0.013855563319339126,
+    "unique_frames": 919
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.019,
+   0.0346,
+   0.0756,
+   0.0775,
+   0.0175,
+   0.0198,
+   0.1292
+  ],
+  "state_min": [
+   -0.492000013589859,
+   -0.0020000000949949026,
+   0.014999999664723873,
+   -1.2020000219345093,
+   -0.026000000536441803,
+   -0.29600000381469727,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.026000000536441803,
+   2.430000066757202,
+   2.3949999809265137,
+   0.05000000074505806,
+   0.18799999356269836,
+   0.07800000160932541,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep001_20261016_234820",
+  "skipped": "I wrongly placed the blue cube on the yellow square."
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep001_20261016_235003",
+  "plan": {
+   "episode": 1,
+   "batch": 1,
+   "colour": "green",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 842,
+  "duration_s": 28.033333333307837,
+  "trim_window_rel_s": [
+   0.0,
+   28.059648566000305
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.010935288333257631,
+    "median_age_s": 0.007479177153982164,
+    "unique_frames": 842
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03333431565170031,
+    "median_age_s": 0.010298900830775892,
+    "unique_frames": 841
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0157,
+   0.0426,
+   0.1032,
+   0.0796,
+   0.0146,
+   0.0464,
+   0.1238
+  ],
+  "state_min": [
+   -0.34299999475479126,
+   -0.0010000000474974513,
+   0.013000000268220901,
+   -1.2009999752044678,
+   -0.05400000140070915,
+   -0.29100000858306885,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.04800000041723251,
+   2.0399999618530273,
+   1.8009999990463257,
+   0.0010000000474974513,
+   0.10499999672174454,
+   0.14800000190734863,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep002_20261016_235109",
+  "plan": {
+   "episode": 2,
+   "batch": 1,
+   "colour": "purple",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 909,
+  "duration_s": 30.26666666705205,
+  "trim_window_rel_s": [
+   0.0,
+   30.27981575800004
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03932959587837104,
+    "median_age_s": 0.007242061189572269,
+    "unique_frames": 908
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.035497559028044634,
+    "median_age_s": 0.021862283600967203,
+    "unique_frames": 907
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0199,
+   0.0522,
+   0.1051,
+   0.0596,
+   0.0171,
+   0.0335,
+   0.1451
+  ],
+  "state_min": [
+   -0.2160000056028366,
+   -0.0010000000474974513,
+   0.012000000104308128,
+   -1.190999984741211,
+   -0.009999999776482582,
+   -0.050999999046325684,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.06300000101327896,
+   2.2330000400543213,
+   2.0989999771118164,
+   0.0010000000474974513,
+   0.17900000512599945,
+   0.5440000295639038,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep003_20261016_235344",
+  "skipped": "mirror exit=1 outcome=return_failed"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep003_20261016_235907",
+  "plan": {
+   "episode": 3,
+   "batch": 1,
+   "colour": "green",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 813,
+  "duration_s": 27.066666667011305,
+  "trim_window_rel_s": [
+   0.0,
+   27.07961599400005
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.028614617336643278,
+    "median_age_s": 0.02527641550750559,
+    "unique_frames": 813
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.030767970333727135,
+    "median_age_s": 0.020871083839665516,
+    "unique_frames": 813
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0162,
+   0.043,
+   0.1195,
+   0.0826,
+   0.0198,
+   0.0228,
+   0.1237
+  ],
+  "state_min": [
+   -0.27900001406669617,
+   -0.004000000189989805,
+   0.009999999776482582,
+   -1.184999942779541,
+   -0.0010000000474974513,
+   -0.029999999329447746,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.07599999755620956,
+   2.2260000705718994,
+   2.1019999980926514,
+   0.0010000000474974513,
+   0.20999999344348907,
+   0.4230000078678131,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep004_20261017_000017",
+  "skipped": "released the cube mid-carry by accident"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep004_20261017_000259",
+  "plan": {
+   "episode": 4,
+   "batch": 1,
+   "colour": "red",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 932,
+  "duration_s": 31.03333333372848,
+  "trim_window_rel_s": [
+   0.0,
+   31.0397043439998
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03380140737226611,
+    "median_age_s": 0.02936323656786044,
+    "unique_frames": 922
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.033371873700161814,
+    "median_age_s": 0.011206142335140612,
+    "unique_frames": 931
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0375,
+   0.0395,
+   0.1168,
+   0.0817,
+   0.0203,
+   0.0369,
+   0.134
+  ],
+  "state_min": [
+   -0.5720000267028809,
+   -0.0020000000949949026,
+   -0.004999999888241291,
+   -1.1720000505447388,
+   -0.10300000011920929,
+   -0.3930000066757202,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.012000000104308128,
+   2.180999994277954,
+   2.0220000743865967,
+   0.2329999953508377,
+   0.08299999684095383,
+   0.05999999865889549,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep005_20261017_000414",
+  "plan": {
+   "episode": 5,
+   "batch": 1,
+   "colour": "purple",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 845,
+  "duration_s": 28.133333333691553,
+  "trim_window_rel_s": [
+   0.7196516040003189,
+   28.879744099000163
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.011846960333969037,
+    "median_age_s": 0.008271082526334794,
+    "unique_frames": 845
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.029868050000004587,
+    "median_age_s": 0.019445791840553284,
+    "unique_frames": 845
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0226,
+   0.0432,
+   0.1198,
+   0.0819,
+   0.0126,
+   0.0507,
+   0.1365
+  ],
+  "state_min": [
+   -0.4230000078678131,
+   -0.004000000189989805,
+   -0.008999999612569809,
+   -1.1749999523162842,
+   -0.06700000166893005,
+   -0.35499998927116394,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.02500000037252903,
+   2.2019999027252197,
+   2.0490000247955322,
+   0.14399999380111694,
+   0.07999999821186066,
+   0.10700000077486038,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep006_20261017_000521",
+  "plan": {
+   "episode": 6,
+   "batch": 1,
+   "colour": "yellow",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 952,
+  "duration_s": 31.700000000403634,
+  "trim_window_rel_s": [
+   1.4200606100002915,
+   33.14038403400082
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03236536266740586,
+    "median_age_s": 0.02859215170110474,
+    "unique_frames": 952
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03336581656640192,
+    "median_age_s": 0.01167622503135135,
+    "unique_frames": 950
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0234,
+   0.0406,
+   0.1195,
+   0.0688,
+   0.0155,
+   0.0263,
+   0.153
+  ],
+  "state_min": [
+   -0.5830000042915344,
+   -0.003000000026077032,
+   0.003000000026077032,
+   -1.1829999685287476,
+   -0.15600000321865082,
+   -0.3330000042915344,
+   0.052000001072883606
+  ],
+  "state_max": [
+   -0.026000000536441803,
+   2.318000078201294,
+   2.194000005722046,
+   0.028999999165534973,
+   0.13099999725818634,
+   0.3700000047683716,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep007_20261017_000639",
+  "skipped": "accidently released the cube in the middle"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep007_20261017_000806",
+  "plan": {
+   "episode": 7,
+   "batch": 1,
+   "colour": "red",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 905,
+  "duration_s": 30.13333333371702,
+  "trim_window_rel_s": [
+   0.0,
+   30.16011151099974
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.008734729000025254,
+    "median_age_s": 0.004949503526404442,
+    "unique_frames": 905
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03355019694663497,
+    "median_age_s": 0.010993558092195599,
+    "unique_frames": 902
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0246,
+   0.0426,
+   0.1196,
+   0.0628,
+   0.016,
+   0.0287,
+   0.1298
+  ],
+  "state_min": [
+   -0.6069999933242798,
+   -0.0020000000949949026,
+   0.008999999612569809,
+   -1.1749999523162842,
+   -0.08299999684095383,
+   -0.5640000104904175,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.014999999664723873,
+   2.252000093460083,
+   2.0840001106262207,
+   0.003000000026077032,
+   0.05700000002980232,
+   0.25099998712539673,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep008_20261017_000912",
+  "plan": {
+   "episode": 8,
+   "batch": 1,
+   "colour": "yellow",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 773,
+  "duration_s": 25.733333333660994,
+  "trim_window_rel_s": [
+   0.0,
+   25.760063527000057
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.00987528400037263,
+    "median_age_s": 0.006366894509483245,
+    "unique_frames": 773
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.033451289320510114,
+    "median_age_s": 0.009389908824232407,
+    "unique_frames": 771
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0189,
+   0.041,
+   0.1196,
+   0.0761,
+   0.022,
+   0.0295,
+   0.1234
+  ],
+  "state_min": [
+   -0.515999972820282,
+   -0.003000000026077032,
+   0.008999999612569809,
+   -1.1790000200271606,
+   -0.19599999487400055,
+   -0.4620000123977661,
+   0.052000001072883606
+  ],
+  "state_max": [
+   -0.007000000216066837,
+   2.3970000743865967,
+   2.3529999256134033,
+   0.003000000026077032,
+   0.0560000017285347,
+   0.04600000008940697,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep009_20261017_001012",
+  "plan": {
+   "episode": 9,
+   "batch": 1,
+   "colour": "purple",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 840,
+  "duration_s": 27.966666667022764,
+  "trim_window_rel_s": [
+   0.0,
+   27.99945449200004
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03356978292049462,
+    "median_age_s": 0.00334252441280114,
+    "unique_frames": 835
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.033873245296490495,
+    "median_age_s": 0.010590013287583133,
+    "unique_frames": 836
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0169,
+   0.037,
+   0.1194,
+   0.0836,
+   0.0171,
+   0.0323,
+   0.1238
+  ],
+  "state_min": [
+   -0.3720000088214874,
+   -0.0010000000474974513,
+   0.009999999776482582,
+   -1.1859999895095825,
+   -0.02199999988079071,
+   -0.2549999952316284,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.013000000268220901,
+   2.2230000495910645,
+   2.055999994277954,
+   0.05700000002980232,
+   0.09099999815225601,
+   0.08699999749660492,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep010_20261017_001120",
+  "plan": {
+   "episode": 10,
+   "batch": 1,
+   "colour": "red",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 946,
+  "duration_s": 31.500000000401087,
+  "trim_window_rel_s": [
+   0.0,
+   31.519646925000416
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03374143139444641,
+    "median_age_s": 0.004239132205839269,
+    "unique_frames": 943
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.033366169637702114,
+    "median_age_s": 0.011522291770688753,
+    "unique_frames": 944
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0312,
+   0.0382,
+   0.1194,
+   0.0718,
+   0.0305,
+   0.0471,
+   0.1413
+  ],
+  "state_min": [
+   -0.6230000257492065,
+   -0.0020000000949949026,
+   0.009999999776482582,
+   -1.190999984741211,
+   -0.16599999368190765,
+   -0.4090000092983246,
+   0.052000001072883606
+  ],
+  "state_max": [
+   -0.010999999940395355,
+   2.0169999599456787,
+   1.7649999856948853,
+   0.10000000149011612,
+   0.18199999630451202,
+   0.3919999897480011,
+   4.454999923706055
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep011_20261017_001233",
+  "plan": {
+   "episode": 11,
+   "batch": 1,
+   "colour": "green",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 912,
+  "duration_s": 30.366666667053323,
+  "trim_window_rel_s": [
+   0.0,
+   30.379612423000253
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.015050409336254233,
+    "median_age_s": 0.011338480526319472,
+    "unique_frames": 912
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02324774599946977,
+    "median_age_s": 0.012251608859969565,
+    "unique_frames": 912
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0207,
+   0.0461,
+   0.1195,
+   0.0792,
+   0.0298,
+   0.0308,
+   0.1236
+  ],
+  "state_min": [
+   -0.24699999392032623,
+   -0.0020000000949949026,
+   0.008999999612569809,
+   -1.190999984741211,
+   -0.039000000804662704,
+   0.0010000000474974513,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.10000000149011612,
+   2.069000005722046,
+   1.8289999961853027,
+   0.020999999716877937,
+   0.18400000035762787,
+   0.5339999794960022,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep012_20261017_001336",
+  "plan": {
+   "episode": 12,
+   "batch": 2,
+   "colour": "green",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 752,
+  "duration_s": 25.03333333365208,
+  "trim_window_rel_s": [
+   0.0,
+   25.040551899000093
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.01849903033416922,
+    "median_age_s": 0.015387623995593458,
+    "unique_frames": 752
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.030890984334291716,
+    "median_age_s": 0.021521111159927386,
+    "unique_frames": 752
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0164,
+   0.0422,
+   0.1194,
+   0.0837,
+   0.024,
+   0.028,
+   0.1237
+  ],
+  "state_min": [
+   -0.3240000009536743,
+   -0.003000000026077032,
+   0.010999999940395355,
+   -1.1859999895095825,
+   -0.04699999839067459,
+   -0.020999999716877937,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.10700000077486038,
+   2.0899999141693115,
+   1.8769999742507935,
+   0.017999999225139618,
+   0.16899999976158142,
+   0.4099999964237213,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep013_20261017_001433",
+  "skipped": "placed on the wrong box"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep013_20261017_001603",
+  "plan": {
+   "episode": 13,
+   "batch": 2,
+   "colour": "purple",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 706,
+  "duration_s": 23.500000000299224,
+  "trim_window_rel_s": [
+   0.0,
+   23.519886932999725
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.054942095528531354,
+    "median_age_s": 0.022599700313548965,
+    "unique_frames": 705
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.0335689156790977,
+    "median_age_s": 0.024355794661005348,
+    "unique_frames": 703
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0162,
+   0.0454,
+   0.1198,
+   0.0806,
+   0.016,
+   0.0317,
+   0.1234
+  ],
+  "state_min": [
+   -0.2849999964237213,
+   -0.004000000189989805,
+   -0.00800000037997961,
+   -1.1740000247955322,
+   -0.0010000000474974513,
+   -0.008999999612569809,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.06800000369548798,
+   2.240999937057495,
+   2.0980000495910645,
+   0.0860000029206276,
+   0.18799999356269836,
+   0.39100000262260437,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep014_20261017_001658",
+  "plan": {
+   "episode": 14,
+   "batch": 2,
+   "colour": "red",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 782,
+  "duration_s": 26.033333333664814,
+  "trim_window_rel_s": [
+   0.0,
+   26.060664990000078
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.01824854066762782,
+    "median_age_s": 0.01492674350447487,
+    "unique_frames": 782
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03156971800035535,
+    "median_age_s": 0.022002042998792604,
+    "unique_frames": 782
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0195,
+   0.0424,
+   0.1196,
+   0.0805,
+   0.0214,
+   0.0192,
+   0.1226
+  ],
+  "state_min": [
+   -0.5759999752044678,
+   -0.003000000026077032,
+   0.009999999776482582,
+   -1.1749999523162842,
+   -0.19699999690055847,
+   -0.4449999928474426,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.028999999165534973,
+   2.177000045776367,
+   2.0329999923706055,
+   0.00800000037997961,
+   0.10899999737739563,
+   0.03400000184774399,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep015_20261017_002007",
+  "plan": {
+   "episode": 15,
+   "batch": 2,
+   "colour": "yellow",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 861,
+  "duration_s": 28.666666667031677,
+  "trim_window_rel_s": [
+   0.0,
+   28.679969667000478
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03353271230662358,
+    "median_age_s": 0.0037009648249295424,
+    "unique_frames": 854
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.025514987337373896,
+    "median_age_s": 0.015226397516926227,
+    "unique_frames": 861
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0258,
+   0.0386,
+   0.1194,
+   0.0797,
+   0.0331,
+   0.0422,
+   0.1262
+  ],
+  "state_min": [
+   -0.5090000033378601,
+   -0.003000000026077032,
+   0.009999999776482582,
+   -1.1660000085830688,
+   -0.006000000052154064,
+   -0.3499999940395355,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.012000000104308128,
+   2.2200000286102295,
+   2.0290000438690186,
+   0.003000000026077032,
+   0.2759999930858612,
+   0.5149999856948853,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep016_20261017_002118",
+  "skipped": "mirror exit=1 outcome=failed"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep016_20261017_002211",
+  "plan": {
+   "episode": 16,
+   "batch": 2,
+   "colour": "red",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 845,
+  "duration_s": 28.133333333691553,
+  "trim_window_rel_s": [
+   0.0,
+   28.13969117800025
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.014593380999940564,
+    "median_age_s": 0.011115091182546166,
+    "unique_frames": 845
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03350469424458424,
+    "median_age_s": 0.010392899066573591,
+    "unique_frames": 842
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.027,
+   0.0394,
+   0.1194,
+   0.0798,
+   0.0209,
+   0.0523,
+   0.1409
+  ],
+  "state_min": [
+   -0.5720000267028809,
+   -0.0020000000949949026,
+   0.009999999776482582,
+   -1.1699999570846558,
+   -0.007000000216066837,
+   -0.47600001096725464,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.004999999888241291,
+   2.180999994277954,
+   2.002000093460083,
+   0.03500000014901161,
+   0.2029999941587448,
+   0.550000011920929,
+   4.504000186920166
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep017_20261017_002301",
+  "plan": {
+   "episode": 17,
+   "batch": 2,
+   "colour": "yellow",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 1056,
+  "duration_s": 35.16666666711444,
+  "trim_window_rel_s": [
+   0.0,
+   35.19973802700042
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.009959663336303493,
+    "median_age_s": 0.0056714513789302146,
+    "unique_frames": 1056
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03391695555546903,
+    "median_age_s": 0.012963358505658107,
+    "unique_frames": 1050
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0265,
+   0.0412,
+   0.1196,
+   0.0779,
+   0.027,
+   0.0369,
+   0.1221
+  ],
+  "state_min": [
+   -0.550000011920929,
+   -0.0010000000474974513,
+   0.007000000216066837,
+   -1.1770000457763672,
+   -0.16300000250339508,
+   -0.5389999747276306,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.06599999964237213,
+   2.437999963760376,
+   2.3970000743865967,
+   0.0020000000949949026,
+   0.04800000041723251,
+   0.23800000548362732,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep018_20261017_002412",
+  "plan": {
+   "episode": 18,
+   "batch": 2,
+   "colour": "purple",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 693,
+  "duration_s": 23.066666666960373,
+  "trim_window_rel_s": [
+   0.0,
+   23.0998433700006
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.024239657666839776,
+    "median_age_s": 0.021305303490407823,
+    "unique_frames": 693
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.025730923999617517,
+    "median_age_s": 0.017443622145947302,
+    "unique_frames": 693
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0163,
+   0.0364,
+   0.1198,
+   0.0822,
+   0.0211,
+   0.0229,
+   0.1249
+  ],
+  "state_min": [
+   -0.1979999989271164,
+   -0.0010000000474974513,
+   -0.00800000037997961,
+   -1.1519999504089355,
+   -0.026000000536441803,
+   -0.1340000033378601,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.07100000232458115,
+   2.2100000381469727,
+   2.0360000133514404,
+   0.12200000137090683,
+   0.0949999988079071,
+   0.09600000083446503,
+   4.723999977111816
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep019_20261017_002509",
+  "plan": {
+   "episode": 19,
+   "batch": 2,
+   "colour": "green",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 680,
+  "duration_s": 22.633333333621522,
+  "trim_window_rel_s": [
+   0.8800670939999691,
+   23.539661548000367
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02351949900003092,
+    "median_age_s": 0.02071708429230057,
+    "unique_frames": 680
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02808793333315407,
+    "median_age_s": 0.019696861316788272,
+    "unique_frames": 680
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0134,
+   0.0427,
+   0.1197,
+   0.0821,
+   0.0124,
+   0.0184,
+   0.1486
+  ],
+  "state_min": [
+   -0.09600000083446503,
+   -0.004000000189989805,
+   0.004999999888241291,
+   -1.1759999990463257,
+   -0.026000000536441803,
+   -0.04500000178813934,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.12999999523162842,
+   2.1679999828338623,
+   2.003999948501587,
+   0.029999999329447746,
+   0.14000000059604645,
+   0.10199999809265137,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep020_20261017_002612",
+  "skipped": "mirror exit=1 outcome=failed"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep020_20261017_002640",
+  "plan": {
+   "episode": 20,
+   "batch": 2,
+   "colour": "purple",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 746,
+  "duration_s": 24.833333333649534,
+  "trim_window_rel_s": [
+   0.0,
+   24.85999383699982
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.006294470999819168,
+    "median_age_s": 0.0034897994969469437,
+    "unique_frames": 746
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03370282683226833,
+    "median_age_s": 0.008926934510782303,
+    "unique_frames": 741
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0218,
+   0.044,
+   0.1194,
+   0.0803,
+   0.0131,
+   0.0257,
+   0.1585
+  ],
+  "state_min": [
+   -0.33899998664855957,
+   -0.004000000189989805,
+   0.008999999612569809,
+   -1.1920000314712524,
+   -0.01899999938905239,
+   -0.026000000536441803,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.03999999910593033,
+   2.249000072479248,
+   2.0929999351501465,
+   0.013000000268220901,
+   0.12099999934434891,
+   0.4259999990463257,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep021_20261017_002722",
+  "plan": {
+   "episode": 21,
+   "batch": 2,
+   "colour": "red",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 753,
+  "duration_s": 25.06666666698584,
+  "trim_window_rel_s": [
+   0.0,
+   25.08009032100017
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.01810516400018969,
+    "median_age_s": 0.015379634493910999,
+    "unique_frames": 753
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.027725923333491664,
+    "median_age_s": 0.01882806682624505,
+    "unique_frames": 753
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0437,
+   0.0448,
+   0.1192,
+   0.0773,
+   0.0189,
+   0.0381,
+   0.1223
+  ],
+  "state_min": [
+   -0.5889999866485596,
+   -0.003000000026077032,
+   0.009999999776482582,
+   -1.187999963760376,
+   -0.21699999272823334,
+   -0.6899999976158142,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.004000000189989805,
+   2.2720000743865967,
+   2.1530001163482666,
+   0.004000000189989805,
+   0.03799999877810478,
+   0.05000000074505806,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep022_20261017_002820",
+  "plan": {
+   "episode": 22,
+   "batch": 2,
+   "colour": "green",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 624,
+  "duration_s": 20.766666666931087,
+  "trim_window_rel_s": [
+   0.0,
+   20.799640066999928
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.027576451674576674,
+    "median_age_s": 0.02540405846593785,
+    "unique_frames": 624
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03334680281477631,
+    "median_age_s": 0.007373056680535228,
+    "unique_frames": 623
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0205,
+   0.0461,
+   0.1198,
+   0.0843,
+   0.0196,
+   0.0194,
+   0.1476
+  ],
+  "state_min": [
+   -0.4259999990463257,
+   -0.0020000000949949026,
+   -0.00800000037997961,
+   -1.180999994277954,
+   -0.004000000189989805,
+   -0.07199999690055847,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.11400000005960464,
+   2.117000102996826,
+   1.9210000038146973,
+   0.07500000298023224,
+   0.1940000057220459,
+   0.22200000286102295,
+   4.696000099182129
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep023_20261017_002915",
+  "plan": {
+   "episode": 23,
+   "batch": 2,
+   "colour": "yellow",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 802,
+  "duration_s": 26.70000000033997,
+  "trim_window_rel_s": [
+   0.0,
+   26.700120288000107
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.0063497829996777,
+    "median_age_s": 0.0033061288359022,
+    "unique_frames": 802
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.028415791999577777,
+    "median_age_s": 0.01869617467355056,
+    "unique_frames": 802
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0277,
+   0.0454,
+   0.1187,
+   0.073,
+   0.0271,
+   0.0514,
+   0.1244
+  ],
+  "state_min": [
+   -0.5270000100135803,
+   -0.004999999888241291,
+   0.009999999776482582,
+   -1.190000057220459,
+   -0.20600000023841858,
+   -0.5649999976158142,
+   0.052000001072883606
+  ],
+  "state_max": [
+   -0.023000000044703484,
+   2.450000047683716,
+   2.443000078201294,
+   0.0020000000949949026,
+   0.04800000041723251,
+   0.04800000041723251,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep024_20261017_003013",
+  "plan": {
+   "episode": 24,
+   "batch": 3,
+   "colour": "yellow",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 798,
+  "duration_s": 26.566666667004938,
+  "trim_window_rel_s": [
+   0.0,
+   26.58015959899967
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.007373314334472525,
+    "median_age_s": 0.004182035499979975,
+    "unique_frames": 798
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03333716168526735,
+    "median_age_s": 0.024064387022008304,
+    "unique_frames": 797
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0308,
+   0.0433,
+   0.1184,
+   0.0803,
+   0.0338,
+   0.0343,
+   0.1338
+  ],
+  "state_min": [
+   -0.49799999594688416,
+   -0.003000000026077032,
+   0.009999999776482582,
+   -1.1649999618530273,
+   -0.24899999797344208,
+   -0.6320000290870667,
+   0.052000001072883606
+  ],
+  "state_max": [
+   -0.013000000268220901,
+   2.4070000648498535,
+   2.36899995803833,
+   0.004000000189989805,
+   0.08100000023841858,
+   0.05999999865889549,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep025_20261017_003112",
+  "plan": {
+   "episode": 25,
+   "batch": 3,
+   "colour": "green",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 682,
+  "duration_s": 22.700000000289037,
+  "trim_window_rel_s": [
+   0.0,
+   22.70000203699965
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.025306370667749434,
+    "median_age_s": 0.022439943973949994,
+    "unique_frames": 682
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02191981600026338,
+    "median_age_s": 0.013889447310702963,
+    "unique_frames": 682
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0226,
+   0.0382,
+   0.1195,
+   0.0827,
+   0.0255,
+   0.0431,
+   0.1226
+  ],
+  "state_min": [
+   -0.4050000011920929,
+   -0.003000000026077032,
+   -0.0020000000949949026,
+   -1.1710000038146973,
+   -0.0020000000949949026,
+   -0.32499998807907104,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.0729999989271164,
+   2.1080000400543213,
+   1.899999976158142,
+   0.052000001072883606,
+   0.14900000393390656,
+   0.09799999743700027,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep026_20261017_003206",
+  "plan": {
+   "episode": 26,
+   "batch": 3,
+   "colour": "purple",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 679,
+  "duration_s": 22.600000000287764,
+  "trim_window_rel_s": [
+   0.0,
+   22.619760005999524
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02008472000306938,
+    "median_age_s": 0.017217213484400418,
+    "unique_frames": 679
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02491079300034471,
+    "median_age_s": 0.016634720805086545,
+    "unique_frames": 679
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0252,
+   0.0443,
+   0.1196,
+   0.0822,
+   0.025,
+   0.0578,
+   0.1227
+  ],
+  "state_min": [
+   -0.4480000138282776,
+   -0.003000000026077032,
+   0.004999999888241291,
+   -1.184000015258789,
+   -0.054999999701976776,
+   -0.3610000014305115,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.041999999433755875,
+   2.2260000705718994,
+   2.072999954223633,
+   0.04399999976158142,
+   0.06800000369548798,
+   0.09000000357627869,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep027_20261017_003258",
+  "plan": {
+   "episode": 27,
+   "batch": 3,
+   "colour": "yellow",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 893,
+  "duration_s": 29.733333333711926,
+  "trim_window_rel_s": [
+   0.0,
+   29.740427387000636
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02998594133714505,
+    "median_age_s": 0.02659259052688867,
+    "unique_frames": 893
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03359379245830496,
+    "median_age_s": 0.022685594985887292,
+    "unique_frames": 891
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0292,
+   0.042,
+   0.1194,
+   0.0727,
+   0.0226,
+   0.0307,
+   0.1312
+  ],
+  "state_min": [
+   -0.5590000152587891,
+   -0.004000000189989805,
+   0.008999999612569809,
+   -1.184000015258789,
+   -0.14399999380111694,
+   -0.5450000166893005,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.023000000044703484,
+   2.390000104904175,
+   2.318000078201294,
+   0.03200000151991844,
+   0.05999999865889549,
+   0.3449999988079071,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep028_20261017_003450",
+  "plan": {
+   "episode": 28,
+   "batch": 3,
+   "colour": "purple",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 720,
+  "duration_s": 23.966666666971832,
+  "trim_window_rel_s": [
+   0.0,
+   23.999530011999923
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02868762300022354,
+    "median_age_s": 0.025832923965026566,
+    "unique_frames": 720
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.018037637999441358,
+    "median_age_s": 0.009508394653494179,
+    "unique_frames": 720
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0247,
+   0.0385,
+   0.1195,
+   0.07,
+   0.0174,
+   0.0356,
+   0.122
+  ],
+  "state_min": [
+   -0.3409999907016754,
+   -0.0020000000949949026,
+   0.008999999612569809,
+   -1.187999963760376,
+   -0.0010000000474974513,
+   -0.027000000700354576,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.11299999803304672,
+   2.184000015258789,
+   2.0409998893737793,
+   0.02800000086426735,
+   0.16500000655651093,
+   0.41100001335144043,
+   4.538000106811523
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep029_20261017_003553",
+  "plan": {
+   "episode": 29,
+   "batch": 3,
+   "colour": "red",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 686,
+  "duration_s": 22.83333333362407,
+  "trim_window_rel_s": [
+   0.0,
+   22.84006792999935
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.008071183001447935,
+    "median_age_s": 0.005229309489095613,
+    "unique_frames": 686
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03347996037064149,
+    "median_age_s": 0.02519190301609342,
+    "unique_frames": 682
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0405,
+   0.0454,
+   0.1193,
+   0.0652,
+   0.0297,
+   0.0407,
+   0.1217
+  ],
+  "state_min": [
+   -0.5849999785423279,
+   -0.003000000026077032,
+   0.009999999776482582,
+   -1.187999963760376,
+   -0.2639999985694885,
+   -0.6209999918937683,
+   0.052000001072883606
+  ],
+  "state_max": [
+   -0.013000000268220901,
+   2.265000104904175,
+   2.127000093460083,
+   0.004000000189989805,
+   0.04500000178813934,
+   0.05000000074505806,
+   4.133999824523926
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep030_20261017_003646",
+  "skipped": "mirror exit=1 outcome=failed"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep030_20261017_003711",
+  "plan": {
+   "episode": 30,
+   "batch": 3,
+   "colour": "yellow",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 725,
+  "duration_s": 24.13333333364062,
+  "trim_window_rel_s": [
+   0.0,
+   24.139915005000148
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.019372556999769586,
+    "median_age_s": 0.016251966488198377,
+    "unique_frames": 725
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.033574843945643806,
+    "median_age_s": 0.008751749795010255,
+    "unique_frames": 722
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0273,
+   0.039,
+   0.1189,
+   0.0811,
+   0.0333,
+   0.0478,
+   0.1222
+  ],
+  "state_min": [
+   -0.5320000052452087,
+   -0.003000000026077032,
+   0.009999999776482582,
+   -1.1929999589920044,
+   -0.2409999966621399,
+   -0.5759999752044678,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.03200000151991844,
+   2.4509999752044678,
+   2.4200000762939453,
+   0.004999999888241291,
+   0.050999999046325684,
+   0.09600000083446503,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep031_20261017_003752",
+  "skipped": "mirror exit=21 outcome=failed"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep031_20261017_003817",
+  "skipped": "mirror exit=1 outcome=failed"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep031_20261017_003825",
+  "plan": {
+   "episode": 31,
+   "batch": 3,
+   "colour": "green",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 611,
+  "duration_s": 20.333333333592236,
+  "trim_window_rel_s": [
+   0.0,
+   20.35943889400005
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02182953333522164,
+    "median_age_s": 0.01940160980393557,
+    "unique_frames": 611
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.01555358066707413,
+    "median_age_s": 0.008062456131483486,
+    "unique_frames": 611
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0139,
+   0.0428,
+   0.1194,
+   0.0818,
+   0.0222,
+   0.0279,
+   0.124
+  ],
+  "state_min": [
+   -0.24199999868869781,
+   -0.004000000189989805,
+   0.009999999776482582,
+   -1.187999963760376,
+   -0.01600000075995922,
+   -0.0010000000474974513,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.03700000047683716,
+   2.0179998874664307,
+   1.8029999732971191,
+   0.0020000000949949026,
+   0.14900000393390656,
+   0.4790000021457672,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep032_20261017_003901",
+  "plan": {
+   "episode": 32,
+   "batch": 3,
+   "colour": "purple",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 613,
+  "duration_s": 20.40000000025975,
+  "trim_window_rel_s": [
+   0.0,
+   20.41987923600027
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.010890087333791598,
+    "median_age_s": 0.008223021137382602,
+    "unique_frames": 613
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03337099423242762,
+    "median_age_s": 0.007243729106448882,
+    "unique_frames": 611
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0159,
+   0.045,
+   0.1195,
+   0.0808,
+   0.019,
+   0.0201,
+   0.1343
+  ],
+  "state_min": [
+   -0.3240000009536743,
+   -0.004000000189989805,
+   0.009999999776482582,
+   -1.184999942779541,
+   -0.01899999938905239,
+   -0.2329999953508377,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.052000001072883606,
+   2.239000082015991,
+   2.0829999446868896,
+   0.004000000189989805,
+   0.12399999797344208,
+   0.15800000727176666,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep033_20261017_003952",
+  "skipped": "mirror exit=1 outcome=failed"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep033_20261017_004018",
+  "plan": {
+   "episode": 33,
+   "batch": 3,
+   "colour": "red",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 932,
+  "duration_s": 31.03333333372848,
+  "trim_window_rel_s": [
+   0.0,
+   31.039859710999735
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.011536731999512995,
+    "median_age_s": 0.007626364371844829,
+    "unique_frames": 932
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03337365362312994,
+    "median_age_s": 0.01122764442470725,
+    "unique_frames": 931
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0226,
+   0.0397,
+   0.1188,
+   0.0614,
+   0.0248,
+   0.0334,
+   0.127
+  ],
+  "state_min": [
+   -0.5979999899864197,
+   -0.004000000189989805,
+   0.009999999776482582,
+   -1.187000036239624,
+   -0.1469999998807907,
+   -0.5989999771118164,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.03400000184774399,
+   2.2690000534057617,
+   2.1440000534057617,
+   0.0020000000949949026,
+   0.04399999976158142,
+   0.06800000369548798,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep034_20261017_004104",
+  "plan": {
+   "episode": 34,
+   "batch": 3,
+   "colour": "green",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 680,
+  "duration_s": 22.633333333621522,
+  "trim_window_rel_s": [
+   0.0,
+   22.659900347000075
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02360339499955444,
+    "median_age_s": 0.020900662979329354,
+    "unique_frames": 680
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.032522993333259365,
+    "median_age_s": 0.023694249647178367,
+    "unique_frames": 680
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0194,
+   0.0447,
+   0.1193,
+   0.084,
+   0.0201,
+   0.0403,
+   0.1239
+  ],
+  "state_min": [
+   -0.3840000033378601,
+   -0.003000000026077032,
+   0.008999999612569809,
+   -1.184999942779541,
+   -0.05700000002980232,
+   -0.289000004529953,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.05999999865889549,
+   2.009999990463257,
+   1.7519999742507935,
+   0.014999999664723873,
+   0.11100000143051147,
+   0.14499999582767487,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep035_20261017_004155",
+  "plan": {
+   "episode": 35,
+   "batch": 3,
+   "colour": "red",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 917,
+  "duration_s": 30.533333333722112,
+  "trim_window_rel_s": [
+   0.0,
+   30.53987674200016
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02852730866834463,
+    "median_age_s": 0.024934942528489046,
+    "unique_frames": 917
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.0333858155490816,
+    "median_age_s": 0.010992469354278,
+    "unique_frames": 916
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0295,
+   0.0437,
+   0.1192,
+   0.0613,
+   0.0252,
+   0.0517,
+   0.1456
+  ],
+  "state_min": [
+   -0.6230000257492065,
+   -0.0020000000949949026,
+   0.007000000216066837,
+   -1.184999942779541,
+   -0.1509999930858612,
+   -0.5950000286102295,
+   0.052000001072883606
+  ],
+  "state_max": [
+   -0.03200000151991844,
+   2.2850000858306885,
+   2.1600000858306885,
+   0.050999999046325684,
+   0.0010000000474974513,
+   0.2280000001192093,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep036_20261017_004455",
+  "plan": {
+   "episode": 36,
+   "batch": 4,
+   "colour": "yellow",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 807,
+  "duration_s": 26.866666667008758,
+  "trim_window_rel_s": [
+   0.0,
+   26.87948226000026
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.027618936668659444,
+    "median_age_s": 0.024257194180790975,
+    "unique_frames": 807
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.023884508999799436,
+    "median_age_s": 0.013901202829401882,
+    "unique_frames": 807
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0222,
+   0.0411,
+   0.1194,
+   0.0621,
+   0.0299,
+   0.0324,
+   0.1228
+  ],
+  "state_min": [
+   -0.5490000247955322,
+   -0.0010000000474974513,
+   0.008999999612569809,
+   -1.184999942779541,
+   -0.1860000044107437,
+   -0.5350000262260437,
+   0.052000001072883606
+  ],
+  "state_max": [
+   -0.024000000208616257,
+   2.4230000972747803,
+   2.3949999809265137,
+   0.02199999988079071,
+   0.07900000363588333,
+   0.24500000476837158,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep037_20261017_004556",
+  "skipped": "mirror exit=1 outcome=failed"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep037_20261017_004621",
+  "skipped": "mirror exit=1 outcome=failed"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep037_20261017_004631",
+  "plan": {
+   "episode": 37,
+   "batch": 4,
+   "colour": "purple",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 689,
+  "duration_s": 22.93333333362534,
+  "trim_window_rel_s": [
+   0.0,
+   22.959960073999355
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.022343209001519426,
+    "median_age_s": 0.01946099813994806,
+    "unique_frames": 689
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03345066121255513,
+    "median_age_s": 0.00821429940424423,
+    "unique_frames": 687
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0161,
+   0.0437,
+   0.1193,
+   0.0783,
+   0.0246,
+   0.0215,
+   0.1234
+  ],
+  "state_min": [
+   -0.2529999911785126,
+   -0.0020000000949949026,
+   0.008999999612569809,
+   -1.190999984741211,
+   -0.05299999937415123,
+   0.01600000075995922,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.01899999938905239,
+   2.2070000171661377,
+   2.072999954223633,
+   0.03400000184774399,
+   0.11500000208616257,
+   0.5649999976158142,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep038_20261017_004709",
+  "plan": {
+   "episode": 38,
+   "batch": 4,
+   "colour": "yellow",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 923,
+  "duration_s": 30.73333333372466,
+  "trim_window_rel_s": [
+   0.0,
+   30.740293820999796
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03343096595926909,
+    "median_age_s": 0.0036678763999589137,
+    "unique_frames": 922
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.034159073717091815,
+    "median_age_s": 0.022387111255739,
+    "unique_frames": 920
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0208,
+   0.0446,
+   0.119,
+   0.0484,
+   0.029,
+   0.0446,
+   0.1558
+  ],
+  "state_min": [
+   -0.5389999747276306,
+   -0.004000000189989805,
+   0.009999999776482582,
+   -1.1920000314712524,
+   -0.13699999451637268,
+   -0.5849999785423279,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.0010000000474974513,
+   2.430999994277954,
+   2.428999900817871,
+   0.014999999664723873,
+   0.12099999934434891,
+   0.33399999141693115,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep039_20261017_004806",
+  "plan": {
+   "episode": 39,
+   "batch": 4,
+   "colour": "red",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 701,
+  "duration_s": 23.333333333630435,
+  "trim_window_rel_s": [
+   0.0,
+   23.35983656299959
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.04027794970716059,
+    "median_age_s": 0.00529976614870975,
+    "unique_frames": 700
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03340807016411418,
+    "median_age_s": 0.008377900348932599,
+    "unique_frames": 698
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0429,
+   0.0444,
+   0.1191,
+   0.0669,
+   0.0254,
+   0.0252,
+   0.1438
+  ],
+  "state_min": [
+   -0.5879999995231628,
+   -0.004000000189989805,
+   0.009999999776482582,
+   -1.1779999732971191,
+   -0.10599999874830246,
+   -0.6549999713897705,
+   0.052000001072883606
+  ],
+  "state_max": [
+   -0.008999999612569809,
+   2.2320001125335693,
+   2.1040000915527344,
+   0.004000000189989805,
+   0.11299999803304672,
+   0.052000001072883606,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep040_20261017_004902",
+  "plan": {
+   "episode": 40,
+   "batch": 4,
+   "colour": "green",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 641,
+  "duration_s": 21.33333333360497,
+  "trim_window_rel_s": [
+   0.0,
+   21.360933777000355
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02574649666712503,
+    "median_age_s": 0.023162047472396807,
+    "unique_frames": 641
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.0334552570257074,
+    "median_age_s": 0.025289668494224316,
+    "unique_frames": 639
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0213,
+   0.0451,
+   0.1197,
+   0.0823,
+   0.0293,
+   0.0318,
+   0.1238
+  ],
+  "state_min": [
+   -0.21299999952316284,
+   -0.003000000026077032,
+   0.006000000052154064,
+   -1.1829999685287476,
+   -0.04399999976158142,
+   -0.1469999998807907,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.07500000298023224,
+   2.015000104904175,
+   1.7860000133514404,
+   0.07699999958276749,
+   0.13300000131130219,
+   0.0949999988079071,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep041_20261017_004952",
+  "skipped": "accidently touched the top of the cube"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep041_20261017_005058",
+  "skipped": "mirror exit=1 outcome=failed"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep041_20261017_005118",
+  "plan": {
+   "episode": 41,
+   "batch": 4,
+   "colour": "yellow",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 796,
+  "duration_s": 26.500000000337423,
+  "trim_window_rel_s": [
+   0.0,
+   26.520491236999987
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.033556680043147935,
+    "median_age_s": 0.030098743390226446,
+    "unique_frames": 788
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.033406343968636065,
+    "median_age_s": 0.009428675965409639,
+    "unique_frames": 795
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.03,
+   0.0465,
+   0.1195,
+   0.0487,
+   0.0199,
+   0.0205,
+   0.1238
+  ],
+  "state_min": [
+   -0.5479999780654907,
+   -0.003000000026077032,
+   0.008999999612569809,
+   -1.1920000314712524,
+   -0.328000009059906,
+   -0.6959999799728394,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.02500000037252903,
+   2.4240000247955322,
+   2.4070000648498535,
+   0.004000000189989805,
+   0.004000000189989805,
+   0.06400000303983688,
+   4.480000019073486
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep042_20261017_005200",
+  "plan": {
+   "episode": 42,
+   "batch": 4,
+   "colour": "red",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 910,
+  "duration_s": 30.300000000385808,
+  "trim_window_rel_s": [
+   0.0,
+   30.320808348000355
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.023157214668572124,
+    "median_age_s": 0.019366475866718247,
+    "unique_frames": 910
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03378108451397566,
+    "median_age_s": 0.02220166020651959,
+    "unique_frames": 907
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0346,
+   0.0467,
+   0.1196,
+   0.0619,
+   0.0245,
+   0.0332,
+   0.1228
+  ],
+  "state_min": [
+   -0.6110000014305115,
+   -0.0,
+   0.006000000052154064,
+   -1.187000036239624,
+   -0.25,
+   -0.6119999885559082,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.03999999910593033,
+   2.2890000343322754,
+   2.1600000858306885,
+   0.03700000047683716,
+   0.05000000074505806,
+   0.29100000858306885,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep043_20261017_005305",
+  "plan": {
+   "episode": 43,
+   "batch": 4,
+   "colour": "green",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 742,
+  "duration_s": 24.700000000314503,
+  "trim_window_rel_s": [
+   0.0,
+   24.71922684400033
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.0539107810736823,
+    "median_age_s": 0.019028844493732322,
+    "unique_frames": 741
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.033413028543691325,
+    "median_age_s": 0.009089298885101016,
+    "unique_frames": 741
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0196,
+   0.0424,
+   0.1194,
+   0.0814,
+   0.0205,
+   0.0352,
+   0.1233
+  ],
+  "state_min": [
+   -0.27900001406669617,
+   -0.0010000000474974513,
+   0.009999999776482582,
+   -1.187999963760376,
+   -0.0020000000949949026,
+   0.05000000074505806,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.07699999958276749,
+   2.246999979019165,
+   2.1040000915527344,
+   0.014000000432133675,
+   0.23800000548362732,
+   0.453000009059906,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep044_20261017_005403",
+  "plan": {
+   "episode": 44,
+   "batch": 4,
+   "colour": "purple",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 771,
+  "duration_s": 25.66666666699348,
+  "trim_window_rel_s": [
+   0.0,
+   25.699799933000577
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.041734123416063085,
+    "median_age_s": 0.006840346833996591,
+    "unique_frames": 770
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03345988410001155,
+    "median_age_s": 0.024058057263573573,
+    "unique_frames": 769
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0227,
+   0.0435,
+   0.1192,
+   0.0819,
+   0.0138,
+   0.0434,
+   0.1222
+  ],
+  "state_min": [
+   -0.4230000078678131,
+   -0.0020000000949949026,
+   0.008999999612569809,
+   -1.1759999990463257,
+   -0.06599999964237213,
+   -0.3190000057220459,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.03700000047683716,
+   2.183000087738037,
+   2.0260000228881836,
+   0.04699999839067459,
+   0.06300000101327896,
+   0.07699999958276749,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep045_20261017_005458",
+  "plan": {
+   "episode": 45,
+   "batch": 4,
+   "colour": "green",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 719,
+  "duration_s": 23.933333333638075,
+  "trim_window_rel_s": [
+   0.0,
+   23.939745132999633
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.009752572999786935,
+    "median_age_s": 0.00678455382330867,
+    "unique_frames": 719
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03343494620639831,
+    "median_age_s": 0.008290330713862204,
+    "unique_frames": 717
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0168,
+   0.0413,
+   0.1198,
+   0.0812,
+   0.023,
+   0.0247,
+   0.1242
+  ],
+  "state_min": [
+   -0.3440000116825104,
+   -0.0010000000474974513,
+   -0.007000000216066837,
+   -1.1790000200271606,
+   -0.020999999716877937,
+   -0.003000000026077032,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.09300000220537186,
+   2.1089999675750732,
+   1.8899999856948853,
+   0.11900000274181366,
+   0.12600000202655792,
+   0.3709999918937683,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep046_20261017_005552",
+  "plan": {
+   "episode": 46,
+   "batch": 4,
+   "colour": "red",
+   "cell": "B23",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 939,
+  "duration_s": 31.266666667064783,
+  "trim_window_rel_s": [
+   0.0,
+   31.280005900000106
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.009158708668110194,
+    "median_age_s": 0.0054403945341618964,
+    "unique_frames": 939
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.0335401379797986,
+    "median_age_s": 0.011438244115197449,
+    "unique_frames": 938
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0467,
+   0.042,
+   0.1193,
+   0.061,
+   0.0185,
+   0.0547,
+   0.133
+  ],
+  "state_min": [
+   -0.6169999837875366,
+   -0.003000000026077032,
+   0.004999999888241291,
+   -1.1890000104904175,
+   -0.07500000298023224,
+   -0.6700000166893005,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.017999999225139618,
+   2.2039999961853027,
+   2.055000066757202,
+   0.03700000047683716,
+   0.09399999678134918,
+   0.45899999141693115,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep047_20261017_005653",
+  "plan": {
+   "episode": 47,
+   "batch": 4,
+   "colour": "purple",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 731,
+  "duration_s": 24.333333333643168,
+  "trim_window_rel_s": [
+   0.0,
+   24.33982398900025
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03341859609554376,
+    "median_age_s": 0.030313194247355568,
+    "unique_frames": 727
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03354347089316434,
+    "median_age_s": 0.008733585407753708,
+    "unique_frames": 728
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0249,
+   0.0385,
+   0.1196,
+   0.0804,
+   0.0171,
+   0.0187,
+   0.1238
+  ],
+  "state_min": [
+   -0.28999999165534973,
+   0.0,
+   0.008999999612569809,
+   -1.190000057220459,
+   -0.006000000052154064,
+   0.04699999839067459,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.09300000220537186,
+   2.265000104904175,
+   2.1589999198913574,
+   0.017000000923871994,
+   0.18000000715255737,
+   0.42100000381469727,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep048_20261017_005748",
+  "skipped": "grasping not smooth"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep048_20261017_005845",
+  "skipped": "I forgot the targeting box."
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep048_20261017_005931",
+  "skipped": "mirror exit=1 outcome=failed"
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep048_20261017_005947",
+  "plan": {
+   "episode": 48,
+   "batch": 5,
+   "colour": "green",
+   "cell": "B12",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 701,
+  "duration_s": 23.33333333299379,
+  "trim_window_rel_s": [
+   0.0,
+   23.359341073000905
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03358785086493299,
+    "median_age_s": 0.030404738672586973,
+    "unique_frames": 696
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03342872093526239,
+    "median_age_s": 0.02481699776399182,
+    "unique_frames": 698
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0283,
+   0.0458,
+   0.1193,
+   0.082,
+   0.0145,
+   0.053,
+   0.1244
+  ],
+  "state_min": [
+   -0.4259999990463257,
+   -0.003000000026077032,
+   0.008999999612569809,
+   -1.184000015258789,
+   -0.10000000149011612,
+   -0.3919999897480011,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.007000000216066837,
+   2.11299991607666,
+   1.9149999618530273,
+   0.003000000026077032,
+   0.07699999958276749,
+   0.10400000214576721,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep049_20261017_010024",
+  "plan": {
+   "episode": 49,
+   "batch": 5,
+   "colour": "red",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 704,
+  "duration_s": 23.433333332992333,
+  "trim_window_rel_s": [
+   0.0,
+   23.440090295000118
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.009770517001015833,
+    "median_age_s": 0.006946110158423835,
+    "unique_frames": 704
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.019227229333409923,
+    "median_age_s": 0.010541257005570515,
+    "unique_frames": 704
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0377,
+   0.0486,
+   0.1192,
+   0.0524,
+   0.0182,
+   0.0316,
+   0.124
+  ],
+  "state_min": [
+   -0.5839999914169312,
+   -0.003000000026077032,
+   -0.0020000000949949026,
+   -1.190000057220459,
+   -0.19200000166893005,
+   -0.7379999756813049,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.017999999225139618,
+   2.24399995803833,
+   2.115000009536743,
+   0.057999998331069946,
+   0.05400000140070915,
+   0.027000000700354576,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep050_20261017_010118",
+  "plan": {
+   "episode": 50,
+   "batch": 5,
+   "colour": "yellow",
+   "cell": "C2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 878,
+  "duration_s": 29.233333332907932,
+  "trim_window_rel_s": [
+   0.0,
+   29.259218094999596
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.01266892933199415,
+    "median_age_s": 0.009152424951935245,
+    "unique_frames": 878
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.028666670001257444,
+    "median_age_s": 0.01803256695438904,
+    "unique_frames": 878
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0204,
+   0.0356,
+   0.1195,
+   0.072,
+   0.0228,
+   0.0386,
+   0.1227
+  ],
+  "state_min": [
+   -0.5270000100135803,
+   -0.0010000000474974513,
+   -0.007000000216066837,
+   -1.184999942779541,
+   -0.16899999976158142,
+   -0.5960000157356262,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.003000000026077032,
+   2.3410000801086426,
+   2.246999979019165,
+   0.12399999797344208,
+   0.16500000655651093,
+   0.3619999885559082,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep051_20261017_010217",
+  "plan": {
+   "episode": 51,
+   "batch": 5,
+   "colour": "purple",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 694,
+  "duration_s": 23.09999999966385,
+  "trim_window_rel_s": [
+   0.0,
+   23.100959154999146
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.029995037666594726,
+    "median_age_s": 0.027156997833117202,
+    "unique_frames": 694
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.01739999833262118,
+    "median_age_s": 0.009042301665431296,
+    "unique_frames": 694
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.022,
+   0.0437,
+   0.1193,
+   0.0807,
+   0.0193,
+   0.0219,
+   0.1229
+  ],
+  "state_min": [
+   -0.3319999873638153,
+   -0.0010000000474974513,
+   0.008999999612569809,
+   -1.190000057220459,
+   -0.04800000041723251,
+   0.007000000216066837,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.057999998331069946,
+   2.2309999465942383,
+   2.0929999351501465,
+   0.004000000189989805,
+   0.15800000727176666,
+   0.41999998688697815,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep052_20261017_010308",
+  "plan": {
+   "episode": 52,
+   "batch": 5,
+   "colour": "green",
+   "cell": "A2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 761,
+  "duration_s": 25.333333332964685,
+  "trim_window_rel_s": [
+   0.0,
+   25.360115572999348
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.024213653334300034,
+    "median_age_s": 0.02104461948511016,
+    "unique_frames": 761
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.019517845001246314,
+    "median_age_s": 0.010223229483017349,
+    "unique_frames": 761
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0168,
+   0.0456,
+   0.1193,
+   0.0819,
+   0.0177,
+   0.0229,
+   0.1227
+  ],
+  "state_min": [
+   -0.36399999260902405,
+   0.0020000000949949026,
+   0.009999999776482582,
+   -1.194000005722046,
+   -0.020999999716877937,
+   -0.0020000000949949026,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.041999999433755875,
+   1.975000023841858,
+   1.7359999418258667,
+   0.003000000026077032,
+   0.10300000011920929,
+   0.34700000286102295,
+   4.6020002365112305
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep053_20261017_010406",
+  "plan": {
+   "episode": 53,
+   "batch": 5,
+   "colour": "purple",
+   "cell": "B12",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 766,
+  "duration_s": 25.499999999628926,
+  "trim_window_rel_s": [
+   0.0,
+   25.519881991000148
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.011306678665278014,
+    "median_age_s": 0.008136501645822136,
+    "unique_frames": 766
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03343301209861238,
+    "median_age_s": 0.009169815616587584,
+    "unique_frames": 764
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0273,
+   0.0392,
+   0.1188,
+   0.0636,
+   0.0205,
+   0.02,
+   0.1235
+  ],
+  "state_min": [
+   -0.4320000112056732,
+   -0.004000000189989805,
+   0.009999999776482582,
+   -1.1740000247955322,
+   -0.06400000303983688,
+   -0.029999999329447746,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.01600000075995922,
+   2.240000009536743,
+   2.0789999961853027,
+   0.004999999888241291,
+   0.12800000607967377,
+   0.3659999966621399,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep054_20261017_010505",
+  "plan": {
+   "episode": 54,
+   "batch": 5,
+   "colour": "green",
+   "cell": "B2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the green square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 645,
+  "duration_s": 21.466666666354286,
+  "trim_window_rel_s": [
+   0.0,
+   21.47954718499932
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.018460859666447504,
+    "median_age_s": 0.01589124250676832,
+    "unique_frames": 645
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02475053733360255,
+    "median_age_s": 0.01684541984286625,
+    "unique_frames": 645
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0248,
+   0.0442,
+   0.1194,
+   0.0825,
+   0.0175,
+   0.0269,
+   0.1234
+  ],
+  "state_min": [
+   -0.30799999833106995,
+   -0.004000000189989805,
+   0.008999999612569809,
+   -1.190999984741211,
+   -0.06800000369548798,
+   -0.24400000274181366,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.03799999877810478,
+   2.0850000381469727,
+   1.871000051498413,
+   0.003000000026077032,
+   0.08699999749660492,
+   0.11299999803304672,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep055_20261017_010555",
+  "plan": {
+   "episode": 55,
+   "batch": 5,
+   "colour": "red",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 993,
+  "duration_s": 33.06666666618548,
+  "trim_window_rel_s": [
+   0.0,
+   33.0994203299997
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.019063364999965415,
+    "median_age_s": 0.014950010754546383,
+    "unique_frames": 993
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.033420980975279235,
+    "median_age_s": 0.02130203140040976,
+    "unique_frames": 991
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0415,
+   0.0474,
+   0.117,
+   0.0555,
+   0.021,
+   0.057,
+   0.1225
+  ],
+  "state_min": [
+   -0.5920000076293945,
+   -0.004999999888241291,
+   0.009999999776482582,
+   -1.1959999799728394,
+   -0.10499999672174454,
+   -0.7250000238418579,
+   0.050999999046325684
+  ],
+  "state_max": [
+   0.008999999612569809,
+   2.2690000534057617,
+   2.138000011444092,
+   0.003000000026077032,
+   0.09399999678134918,
+   0.008999999612569809,
+   4.683000087738037
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep056_20261017_010708",
+  "plan": {
+   "episode": 56,
+   "batch": 5,
+   "colour": "yellow",
+   "cell": "B23",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 812,
+  "duration_s": 27.033333332939947,
+  "trim_window_rel_s": [
+   0.0,
+   27.05941638799959
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.01099755900031596,
+    "median_age_s": 0.0075088909525220515,
+    "unique_frames": 812
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.021435656999528874,
+    "median_age_s": 0.01123858013215795,
+    "unique_frames": 812
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0251,
+   0.0445,
+   0.1188,
+   0.0672,
+   0.0132,
+   0.023,
+   0.1253
+  ],
+  "state_min": [
+   -0.5120000243186951,
+   -0.004000000189989805,
+   0.004000000189989805,
+   -1.1920000314712524,
+   -0.125,
+   -0.625,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.0010000000474974513,
+   2.4079999923706055,
+   2.364000082015991,
+   0.03500000014901161,
+   0.06499999761581421,
+   0.017000000923871994,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep057_20261017_010816",
+  "plan": {
+   "episode": 57,
+   "batch": 5,
+   "colour": "purple",
+   "cell": "C2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the purple square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 548,
+  "duration_s": 18.233333333068003,
+  "trim_window_rel_s": [
+   0.0,
+   18.24052469399976
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.023387289331367356,
+    "median_age_s": 0.021127222862560302,
+    "unique_frames": 548
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.0334214756203437,
+    "median_age_s": 0.026800149154951214,
+    "unique_frames": 547
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0279,
+   0.0415,
+   0.1192,
+   0.0797,
+   0.0174,
+   0.0254,
+   0.1233
+  ],
+  "state_min": [
+   -0.2919999957084656,
+   -0.004000000189989805,
+   0.009999999776482582,
+   -1.1829999685287476,
+   -0.05000000074505806,
+   -0.22499999403953552,
+   0.052000001072883606
+  ],
+  "state_max": [
+   0.017000000923871994,
+   2.2269999980926514,
+   2.0739998817443848,
+   0.0020000000949949026,
+   0.11299999803304672,
+   0.09099999815225601,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep058_20261017_010902",
+  "plan": {
+   "episode": 58,
+   "batch": 5,
+   "colour": "yellow",
+   "cell": "A2",
+   "yaw_deg": 0,
+   "task": "Put the blue cube on the yellow square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 804,
+  "duration_s": 26.76666666627716,
+  "trim_window_rel_s": [
+   0.0,
+   26.779629988001034
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.062193838395614875,
+    "median_age_s": 0.030147058815600758,
+    "unique_frames": 803
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.02362724999875354,
+    "median_age_s": 0.013871008971364063,
+    "unique_frames": 804
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.031,
+   0.0417,
+   0.1192,
+   0.0693,
+   0.0157,
+   0.0427,
+   0.1362
+  ],
+  "state_min": [
+   -0.5120000243186951,
+   -0.003000000026077032,
+   0.009999999776482582,
+   -1.1859999895095825,
+   -0.10599999874830246,
+   -0.7039999961853027,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.032999999821186066,
+   2.430999994277954,
+   2.4030001163482666,
+   0.003000000026077032,
+   0.18000000715255737,
+   0.020999999716877937,
+   4.7230000495910645
+  ],
+  "ok": true
+ },
+ {
+  "episode_dir": "datasets/il_vla_benchmark/t2_20261016/episodes/ep059_20261017_010956",
+  "plan": {
+   "episode": 59,
+   "batch": 5,
+   "colour": "red",
+   "cell": "B2",
+   "yaw_deg": 45,
+   "task": "Put the blue cube on the red square."
+  },
+  "mat_offset_cm": 12.3,
+  "frames": 853,
+  "duration_s": 28.399999999586726,
+  "trim_window_rel_s": [
+   0.0,
+   28.419764775999283
+  ],
+  "cameras": {
+   "d405": {
+    "stale_ticks": 0,
+    "max_age_s": 0.020834021666814806,
+    "median_age_s": 0.017407537172402954,
+    "unique_frames": 853
+   },
+   "d435i": {
+    "stale_ticks": 0,
+    "max_age_s": 0.03340523731458234,
+    "median_age_s": 0.010357436518461327,
+    "unique_frames": 851
+   }
+  },
+  "stale_fraction": 0.0,
+  "max_abs_sent_minus_actual_rad": [
+   0.0227,
+   0.0452,
+   0.1184,
+   0.0737,
+   0.0207,
+   0.038,
+   0.1328
+  ],
+  "state_min": [
+   -0.5910000205039978,
+   -0.003000000026077032,
+   0.008999999612569809,
+   -1.1829999685287476,
+   -0.1459999978542328,
+   -0.5149999856948853,
+   0.050999999046325684
+  ],
+  "state_max": [
+   -0.028999999165534973,
+   2.2669999599456787,
+   2.13100004196167,
+   0.003000000026077032,
+   0.10100000351667404,
+   0.35100001096725464,
+   4.7230000495910645
+  ],
+  "ok": true
+ }
+]

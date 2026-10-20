@@ -1,0 +1,51 @@
+{
+  "description": "Which rows of results/sessions/*.jsonl are scored, and the few category fixes made after a trial. results.jsonl files are the evaluation runner's own logs, copied byte for byte; every decision below was made and written down on the day, in the rig's dated validation records named in 'source'. analysis/reproduce_counts.py applies this file and nothing else.",
+  "scored_tags": {
+    "t1_eval_20261016": ["act", "smolvla", "dp"],
+    "t2_eval_20261017": ["act_t2", "smolvla_t2"],
+    "t2_eval_20261019": ["pi05_t2"],
+    "t2_eval_pi05rtc_20261019": ["pi05_t2"],
+    "t2_gen_pi05_20261019": ["pi05_t2"]
+  },
+  "not_scored_tags": {
+    "act_smoke": "executor smoke tests before the formal run (random positions, executor fixes in between)",
+    "smolvla_smoke": "executor smoke test before the formal run",
+    "dp_smoke": "Diffusion Policy smoke tests before the formal run (original model, then n_action_steps 16 and 31)",
+    "act_c2far": "extra position 5 cm beyond C2, added after the 20 trials, one run per policy; reported separately",
+    "smolvla_c2far": "extra position 5 cm beyond C2, reported separately",
+    "dp_c2far": "extra position 5 cm beyond C2, reported separately"
+  },
+  "separately_reported_splits": {
+    "t2_gen_pi05_20261019": ["exploratory"]
+  },
+  "invalid_runs": [
+    {"session": "t1_eval_20261016", "trial_dir": "evals/act/trial00_20261016_141336",
+     "reason": "executor fault (CPU contention made joint feedback too old) latched before the task finished; rerun",
+     "source": "IL_T1_EVAL_2026-10-16.md"},
+    {"session": "t1_eval_20261016", "trial_dir": "evals/act/trial17_20261016_165945",
+     "reason": "gripper still open from the previous timeout; the start check refused before enabling, no motion; rerun",
+     "source": "IL_T1_EVAL_2026-10-16.md"},
+    {"session": "t1_eval_20261016", "trial_dir": "evals/smolvla/trial08_20261016_161443",
+     "reason": "operator forgot to place the cube; rerun",
+     "source": "IL_T1_EVAL_2026-10-16.md"},
+    {"session": "t1_eval_20261016", "trial_dir": "evals/dp/trial16_20261017_230944",
+     "reason": "cube placed at the wrong position (inside the frame near A1 instead of the protocol's out-of-distribution spot, checked on the start frame); rerun at the protocol position",
+     "source": "IL_T1_EVAL_2026-10-16.md"},
+    {"session": "t2_eval_20261017", "trial_dir": "evals/smolvla_t2/trial17_20261017_214656",
+     "reason": "gripper started open; the start check refused before enabling, no motion; rerun",
+     "source": "IL_T2_EVAL_2026-10-17.md"},
+    {"session": "t2_eval_20261017", "trial_dir": "evals/smolvla_t2/trial18_20261017_215052",
+     "reason": "executor fault at 47 s (J1 feedback too old), treated like the Task 1 executor faults; rerun",
+     "source": "IL_T2_EVAL_2026-10-17.md"}
+  ],
+  "category_fixes": [
+    {"session": "t1_eval_20261016", "trial_dir": "evals/dp/trial15_20261017_230244",
+     "from": "drop", "to": "grasp_miss",
+     "reason": "operator chose drop but described 'reached the cube but did not close and grasp'; by definition a grasp miss. Success is unchanged.",
+     "source": "IL_T1_EVAL_2026-10-16.md"}
+  ],
+  "notes": [
+    "t2_gen_pi05_20261019 trial 38 was entered as success by mistake and corrected to grasp_miss on the day; the logged row already carries the correction (field 'correction').",
+    "In t1_eval_20261016 the *_c2far rows reuse trial index 7 and carry split in_distribution; they are an extra out-of-distribution position, not Task 1 trial 7."
+  ]
+}
